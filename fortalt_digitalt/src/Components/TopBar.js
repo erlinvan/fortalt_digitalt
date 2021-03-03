@@ -22,7 +22,7 @@ function TopBar() {
     const classes = useStyles();
 
     function refreshPage() {
-        window.location.reload(false);
+        window.location.reload();
     }
 
     return (
