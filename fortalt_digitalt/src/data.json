@@ -1,0 +1,10 @@
+{
+    "choiceOne": {
+        "question": "Vil du være ute eller inne?",
+        "options": ["Ute", "Inne"]
+    },
+    "choiceTwo": {
+        "question": "Vil du gjøre som krever fysisk aktivitet?",
+        "options": ["Ja", "Nei"]
+    }
+}

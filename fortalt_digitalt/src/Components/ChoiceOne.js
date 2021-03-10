@@ -2,31 +2,32 @@ import React from "react";
 import { ToggleButton, ToggleButtonGroup } from "@material-ui/lab";
 import { Grid } from "@material-ui/core";
 
-function Toggle() {
-  const [selected, setSelected] = React.useState("ingenting");
-
+const ChoiceOne = ({ choiceOne, setChoiceOne, data }) => {
   const handleChange = (event, value) => {
-    setSelected(value);
+    setChoiceOne(value);
   };
 
   return (
     <Grid container spacing={2} direction="column" alignItems="center">
+      <h3>{data.question}</h3>
       <Grid item>
         <ToggleButtonGroup
           color="secondary"
           size="small"
-          value={selected}
+          value={choiceOne}
           exclusive
           onChange={handleChange}
         >
-          <ToggleButton value="valg 1">Valg 1</ToggleButton>
-          <ToggleButton value="valg 2">Valg 2</ToggleButton>
-          <ToggleButton value="valg 3">Valg 3</ToggleButton>
+          {data &&
+            data.options &&
+            data.options.map((e) => (
+              <ToggleButton value={e}> {e} </ToggleButton>
+            ))}
         </ToggleButtonGroup>
       </Grid>
-      <Grid>Du har valgt: {selected}</Grid>
+      <Grid>Du har valgt: {choiceOne}</Grid>
     </Grid>
   );
-}
+};
 
-export default Toggle;
+export default ChoiceOne;
