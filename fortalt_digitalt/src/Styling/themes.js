@@ -1,3 +1,4 @@
+import green from '@material-ui/core/colors/green';
 import lightGreen from '@material-ui/core/colors/lightGreen';
 import amber from '@material-ui/core/colors/amber';
 
@@ -16,10 +17,10 @@ export const darkTheme = {
     palette: {
         type: 'dark',
         primary: {
-          main: amber[500],
+          main: green[500],
         },
         secondary: {
-          main: lightGreen[500],
+          main: amber[500],
         }
      }
 }

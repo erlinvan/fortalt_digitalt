@@ -1,5 +1,8 @@
 import React from "react";
 
+// Common
+import isDay from "../Common/time";
+
 // Components
 import { Grid } from "@material-ui/core";
 import Title from "./TopBar";
@@ -13,9 +16,7 @@ import { lightTheme, darkTheme } from "../Styling/themes"
 const theme = getTimeTheme()
 
 function getTimeTheme() {
-  let time = new Date().getHours();
-
-  if (8 < time < 18) {
+  if (isDay()) {
     return createMuiTheme(lightTheme);
   }
   else {
