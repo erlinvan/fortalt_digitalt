@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function TopBar(props) {
+function TopBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { t, i18n } = useTranslation();

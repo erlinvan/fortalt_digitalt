@@ -6,16 +6,14 @@ import isDay from "../Common/time";
 
 // Components
 import { Grid } from "@material-ui/core";
+import Divider from '@material-ui/core/Divider';
 import Title from "./TopBar";
-import QuestionsAndOptions from "./QuestionAndOptions";
+import Content from "./Content";
 
 // Styling
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { lightTheme, darkTheme } from "../Styling/themes";
-
-// Data
-import Data from "../data.json";
 
 const theme = getTimeTheme();
 
@@ -28,13 +26,8 @@ function getTimeTheme() {
 }
 
 function App() {
-  const [choiceOne, setChoiceOne] = React.useState("");
-  const [choiceTwo, setChoiceTwo] = React.useState("");
   const {t, i18n} = useTranslation();
 
-  console.log(choiceOne);
-  const data = Data;
-  console.log(data);
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -44,19 +37,10 @@ function App() {
           <h1>{t('Welcome1')}</h1>
           <p>{t('Welcome2')}</p>
         </Grid>
-        <Grid item>
-          {choiceOne === "" ? (
-            <QuestionsAndOptions
-              choiceOne={choiceOne}
-              setChoiceOne={setChoiceOne}
-              data={data.choiceTwo}
-            ></QuestionsAndOptions>
-          ) : (
-            <h3> du har valgt {choiceOne}</h3>
-          )}
+        <Grid item zeroMinWidth>
+          <Content/>
         </Grid>
       </Grid>
-      <div />
     </ThemeProvider>
   );
 }
