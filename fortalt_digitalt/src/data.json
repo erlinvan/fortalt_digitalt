@@ -1,10 +1,10 @@
 {
     "choiceOne": {
-        "question": "Vil du være ute eller inne?",
-        "options": ["Ute", "Inne"]
+        "question": "Hva slags arrangement vil du på",
+        "options": ["Tur", "sport", "spise ute", "kulturopplevelse", "arrangement"]
     },
-    "choiceTwo": {
-        "question": "Vil du gjøre som krever fysisk aktivitet?",
-        "options": ["Ja", "Nei", "kanskje", "vet ikke"]
+    "turValg": {
+        "question": "Vil du gå en kort eller lang tur?",
+        "options": ["kort", "langt"]
     }
 }

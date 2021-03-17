@@ -11,9 +11,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ChoiceOne = ({ choiceOne, setChoiceOne, data }) => {
+const ChoiceOne = ({ choice, setChoice, data }) => {
   const handleChange = (event) => {
-    setChoiceOne(event.target.id);
+    setChoice(event.target.id);
   };
   const classes = useStyles();
 
