@@ -1,4 +1,5 @@
 const i18_no = {
+	"Title": "Fortalt Digitalt",
 	"Welcome1": "Hei!",
 	"Welcome2": "Her kan du finne forslag til nye ting å gjøre"
 };
