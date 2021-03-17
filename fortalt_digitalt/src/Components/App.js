@@ -7,7 +7,7 @@ import isDay from "../Common/time";
 // Components
 import { Grid } from "@material-ui/core";
 import Title from "./TopBar";
-import Toggle from "./ChoiceOne";
+import QuestionsAndOptions from "./QuestionAndOptions";
 
 // Styling
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -22,14 +22,14 @@ const theme = getTimeTheme();
 function getTimeTheme() {
   if (isDay()) {
     return createMuiTheme(lightTheme);
-  } 
-  else {
+  } else {
     return createMuiTheme(darkTheme);
   }
 }
 
 function App() {
   const [choiceOne, setChoiceOne] = React.useState("");
+  const [choiceTwo, setChoiceTwo] = React.useState("");
   const {t, i18n} = useTranslation();
 
   console.log(choiceOne);
@@ -46,17 +46,17 @@ function App() {
         </Grid>
         <Grid item>
           {choiceOne === "" ? (
-            <Toggle
+            <QuestionsAndOptions
               choiceOne={choiceOne}
               setChoiceOne={setChoiceOne}
-              data={data.choiceOne}
-            ></Toggle>
+              data={data.choiceTwo}
+            ></QuestionsAndOptions>
           ) : (
-            <></>
+            <h3> du har valgt {choiceOne}</h3>
           )}
         </Grid>
       </Grid>
-      <div/>
+      <div />
     </ThemeProvider>
   );
 }
