@@ -1,38 +1,35 @@
-/*import React from "react";
+import React from "react";
+import { useTranslation } from 'react-i18next';
+
+// Styling
 import { makeStyles } from '@material-ui/core/styles';
-import HomeIcon from '@material-ui/icons/Home';
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
+import { palette } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+        display: 'flex',
+        position: 'fixed',
+        justifyContent: 'center',
+        bottom: 0,
+        marginBottom: theme.spacing(2),
+        opacity: '50%',
+        width: '100%'
     },
-    button: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
+    link: {
+        color: theme.palette.primary.contrastText,
+        textDecoration: 'none'
+    }
 }));
 
-function TopBar() {
+function Footer() {
     const classes = useStyles();
+    const { t, i18n } = useTranslation();
 
     return (
-        <AppBar position="static">
-            <Toolbar>
-                <Typography variant="h6" className={classes.title}>
-                    Navn på nettsiden
-                </Typography>
-                <IconButton edge="start" onClick={refreshPage} className={classes.button} color="inherit" aria-label="menu">
-                    <HomeIcon />
-                </IconButton>
-            </Toolbar>
-        </AppBar>
+        <div className={classes.root}>
+            <a>{new Date().getFullYear()} Copyright: {t('Group')} 4, <a href="https://www.ntnu.no/eit/eit3014" className={classes.link}> EiT </a></a>
+        </div>
     );
 }
 
-export default TopBar;*/
+export default Footer;

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function TopBar() {
+function Title() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { t, i18n } = useTranslation();
@@ -101,4 +101,4 @@ function TopBar() {
     );
 }
 
-export default TopBar;
+export default Title;
