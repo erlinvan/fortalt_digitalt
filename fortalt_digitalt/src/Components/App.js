@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 
 // Common
 import isDay from "../Common/time";
+//import getNearbyRestaurants from "../Common/maps";
 
 // Components
 import { Grid } from "@material-ui/core";
-import Divider from '@material-ui/core/Divider';
 import Title from "./TopBar";
 import Content from "./Content";
 import Footer from "./BottomBar";

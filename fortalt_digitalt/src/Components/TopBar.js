@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from '@material-ui/icons/Home';
 import LanguageIcon from '@material-ui/icons/Language';
+import { motion } from "framer-motion";
 
 // Styling
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,7 +33,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2)
     },
     logoimg: {
-        width: '35px'
+        userDrag: 'none',
+        width: '35px',
+        '&:hover': {
+            cursor: 'pointer'
+        },
+        '&:active': {
+            cursor: 'grabbing'
+        }
     },
     logoemoji: {
         pointerEvents: 'none',
@@ -46,6 +54,7 @@ function Title() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { t, i18n } = useTranslation();
+    //const constraintsRef = useRef(null);
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -73,10 +82,19 @@ function Title() {
     return (
         <AppBar position="static">
             <Toolbar>
-                <div className={classes.logo}>
+                <motion.div drag     
+                    dragConstraints={{
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    }} 
+                    dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
+                    whileTap={{ scale: 0.8 }} className={classes.logo}
+                >
                     <img src="logo.png" className={classes.logoimg}/>
                     <a className={classes.logoemoji}>{getRandomEmoji()}</a>
-                </div>
+                </motion.div>
                 <Typography variant="h6" className={classes.title}>
                     {t('Title')}
                 </Typography>
