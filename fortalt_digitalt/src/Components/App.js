@@ -1,5 +1,5 @@
 import React from "react";
-import Cookies from 'universal-cookie';
+import Cookies from "universal-cookie";
 
 // Common
 import isDay from "../Common/time";
@@ -7,7 +7,7 @@ import isDay from "../Common/time";
 // Components
 import { Grid } from "@material-ui/core";
 import Title from "./TopBar";
-import Toggle from "./ChoiceOne";
+import QuestionsAndOptions from "./QuestionAndOptions";
 
 // Styling
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -22,24 +22,24 @@ const theme = getTimeTheme();
 function getTimeTheme() {
   if (isDay()) {
     return createMuiTheme(lightTheme);
-  } 
-  else {
+  } else {
     return createMuiTheme(darkTheme);
   }
 }
 
 function App() {
   const [choiceOne, setChoiceOne] = React.useState("");
+  const [choiceTwo, setChoiceTwo] = React.useState("");
   const lang = React.useState(() => {
     const cookies = new Cookies();
     let lang = cookies.get("lang");
 
     if (!lang) {
-      lang = cookies.set("lang", "NO", { path: '/' });
+      lang = cookies.set("lang", "NO", { path: "/" });
     }
 
-    return lang
-  })
+    return lang;
+  });
 
   console.log(choiceOne);
   const data = Data;
@@ -55,17 +55,17 @@ function App() {
         </Grid>
         <Grid item>
           {choiceOne === "" ? (
-            <Toggle
+            <QuestionsAndOptions
               choiceOne={choiceOne}
               setChoiceOne={setChoiceOne}
-              data={data.choiceOne}
-            ></Toggle>
+              data={data.choiceTwo}
+            ></QuestionsAndOptions>
           ) : (
-            <></>
+            <h3> du har valgt {choiceOne}</h3>
           )}
         </Grid>
       </Grid>
-      <div/>
+      <div />
     </ThemeProvider>
   );
 }
