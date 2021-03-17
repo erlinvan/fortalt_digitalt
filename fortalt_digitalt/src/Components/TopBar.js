@@ -1,5 +1,5 @@
 import React from "react";
-import Cookies from 'universal-cookie';
+import { useTranslation } from 'react-i18next';
 
 // Components
 import AppBar from "@material-ui/core/AppBar";
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 function TopBar(props) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const { t, i18n } = useTranslation();
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -42,15 +43,11 @@ function TopBar(props) {
         const { lang } = event.currentTarget.dataset;
         
         // Handle sneaky people
-        if (lang !== "NO" && lang !== "EN") {
-            handleClose(event);
-            return;
+        if (lang === "no" || lang === "en") {
+            i18n.changeLanguage(lang);
         }
-        
-        const cookies = new Cookies();
-        cookies.set("lang", lang, { path: '/' });
 
-        refreshPage();
+        handleClose(event);
     }
 
     function refreshPage() {
@@ -77,8 +74,8 @@ function TopBar(props) {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
             >
-                <MenuItem onClick={updateLang} data-lang={"NO"}>Norsk</MenuItem>
-                <MenuItem onClick={updateLang} data-lang={"EN"}>English</MenuItem>
+                <MenuItem onClick={updateLang} data-lang={"no"}>Norsk</MenuItem>
+                <MenuItem onClick={updateLang} data-lang={"en"}>English</MenuItem>
             </Menu>
         </AppBar>
     );

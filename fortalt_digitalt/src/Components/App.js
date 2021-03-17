@@ -1,5 +1,5 @@
 import React from "react";
-import Cookies from 'universal-cookie';
+import { useTranslation } from 'react-i18next';
 
 // Common
 import isDay from "../Common/time";
@@ -30,16 +30,7 @@ function getTimeTheme() {
 
 function App() {
   const [choiceOne, setChoiceOne] = React.useState("");
-  const lang = React.useState(() => {
-    const cookies = new Cookies();
-    let lang = cookies.get("lang");
-
-    if (!lang) {
-      lang = cookies.set("lang", "NO", { path: '/' });
-    }
-
-    return lang
-  })
+  const {t, i18n} = useTranslation();
 
   console.log(choiceOne);
   const data = Data;
@@ -50,8 +41,8 @@ function App() {
       <Title />
       <Grid container direction="column" alignItems="center">
         <Grid item>
-          <h1>Hei!</h1>
-          <p>Her kan du finne forslag til nye ting å gjøre</p>
+          <h1>{t('Welcome1')}</h1>
+          <p>{t('Welcome2')}</p>
         </Grid>
         <Grid item>
           {choiceOne === "" ? (

@@ -11,8 +11,6 @@ export default async function getWeather() {
     const url = `${proxy}https://api.met.no/weatherapi/locationforecast/2.0/compact.json?lat=${lat}&lon=${lon}`;
     const ua = "FortaltDigitalt/1.0";
 
-    let weather = "";
-
     const response = await fetch(url, {
         method: 'GET',
         headers: {
