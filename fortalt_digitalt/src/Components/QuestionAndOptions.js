@@ -28,7 +28,7 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
         {data &&
           data.options &&
           data.options.map((e) => (
-            <Grid item xs={3} md={3} key={e}>
+            <Grid item xs={4} md={4} key={e}>
               <Paper
                 elevation={2}
                 key={e}
