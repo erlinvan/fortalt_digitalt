@@ -50,11 +50,10 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Title() {
+function TopBar() {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { t, i18n } = useTranslation();
-    //const constraintsRef = useRef(null);
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -119,4 +118,4 @@ function Title() {
     );
 }
 
-export default Title;
+export default TopBar;

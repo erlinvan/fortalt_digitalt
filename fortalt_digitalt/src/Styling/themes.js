@@ -3,7 +3,7 @@ import lightGreen from '@material-ui/core/colors/lightGreen';
 import amber from '@material-ui/core/colors/amber';
 
 // Icons
-import starry_night from './starry_night.jpg';
+import stars from './stars.svg';
 
 export const lightTheme = {
     palette: {
@@ -45,7 +45,7 @@ export const darkTheme = {
             //backgroundPosition: '97% 95%',
             //backgroundRepeat: 'no-repeat',
             //backgroundAttachment: 'fixed',
-            //backgroundImage: `url(${moon})`
+            //backgroundImage: `url(${stars})`
           }
         }
       }

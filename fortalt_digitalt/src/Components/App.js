@@ -7,10 +7,11 @@ import isDay from "../Common/time";
 
 // Components
 import { Grid } from "@material-ui/core";
-import Title from "./TopBar";
+import TopBar from "./TopBar";
 import Content from "./Content";
 import DynamicIcons from "./DynamicIcons";
-import Footer from "./BottomBar";
+import BottomBar from "./BottomBar";
+import Typography from '@material-ui/core/Typography';
 
 // Styling
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -20,7 +21,7 @@ import { lightTheme, darkTheme } from "../Styling/themes";
 const theme = getTimeTheme();
 
 function getTimeTheme() {
-  if (isDay()) {
+  if (!isDay()) {
     return createMuiTheme(lightTheme);
   } else {
     return createMuiTheme(darkTheme);
@@ -33,18 +34,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Title />
+      <TopBar />
       <Grid container direction="column" alignItems="center">
         <Grid item>
-          <h1>{t('Welcome1')}</h1>
-          <p>{t('Welcome2')}</p>
+          <Typography variant="h3">{t('Welcome1')}</Typography>
+          <Typography variant="body1">{t('Welcome2')}</Typography>
         </Grid>
         <Grid item zeroMinWidth>
           <Content />
         </Grid>
       </Grid>
       <DynamicIcons />
-      <Footer />
+      <BottomBar />
     </ThemeProvider>
   );
 }

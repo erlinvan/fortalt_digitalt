@@ -1,9 +1,12 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 
+// Components
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
+
 // Styling
 import { makeStyles } from '@material-ui/core/styles';
-import { palette } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,22 +17,18 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
         opacity: '50%',
         width: '100%'
-    },
-    link: {
-        color: theme.palette.primary.contrastText,
-        textDecoration: 'none'
     }
 }));
 
-function Footer() {
+function BottomBar() {
     const classes = useStyles();
     const { t, i18n } = useTranslation();
 
     return (
         <div className={classes.root}>
-            <a>{new Date().getFullYear()} Copyright: {t('Group')} 4, <a href="https://www.ntnu.no/eit/eit3014" className={classes.link}> EiT </a></a>
+            <Typography variant="body1">{new Date().getFullYear()} Copyright: {t('Group')} 4,  <Link color="inherit" href="https://www.ntnu.no/eit/eit3014"> EiT </Link></Typography>
         </div>
     );
 }
 
-export default Footer;
+export default BottomBar;
