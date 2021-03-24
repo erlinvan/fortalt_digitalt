@@ -1,10 +1,31 @@
 {
     "choiceOne": {
-        "question": "Hva slags arrangement vil du på",
-        "options": ["Tur", "sport", "spise ute", "kulturopplevelse", "arrangement"]
+        "question": "Hva vil du finne på?",
+        "options": ["Tur", "Sport", "Spise ute", "Kulturopplevelser"]
     },
     "turValg": {
         "question": "Vil du gå en kort eller lang tur?",
-        "options": ["kort", "langt"]
-    }
+        "options": ["Kort", "Lang"]
+    },
+    "spisesteder": {
+        "question": "Hva er du ute etter?",
+        "options": ["Byens billigste øl!", "Fancy, men rimelig mat", "Bar med aktiviteter"]
+    },
+    "kultur": {
+        "question": "Hva er du ute etter?",
+        "options": ["Museum", "Historiske steder", "Noe utenom det vanlige"]
+    },
+"tidsspm": {
+    "question": "Vil du gjøre noe nå eller planlegge noe til senere?",
+    "options": ["Nå!", "Planlegge til senere"]
+},
+"sport": {
+    "question": "Velg aktivitet",
+    "options": ["NTNU Idrett", "Ski", "Diskgolf", "Golf", "Pirbadet"]
+},
+"sport2": {
+    "question": "Velg aktivitet",
+    "options": ["Ski", "Diskgolf", "Golf", "Pirbadet"]
+}
+
 }
