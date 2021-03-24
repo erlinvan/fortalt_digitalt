@@ -7,7 +7,7 @@ export default async function getWeather() {
     const lat = "63.4305";
     const lon = "10.3951";
     
-    const proxy = "https://cors-anywhere.herokuapp.com/";
+    const proxy = "https://cors.mroctopus.workers.dev?";
     const url = `${proxy}https://api.met.no/weatherapi/locationforecast/2.0/compact.json?lat=${lat}&lon=${lon}`;
     const ua = "FortaltDigitalt/1.0";
 
