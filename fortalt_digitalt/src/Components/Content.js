@@ -46,7 +46,7 @@ function Content() {
         {choiceTwo === "Tur" && choiceThree === "" && (
           <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.turValg}></QuestionsAndOptions>
         )}
-        {choiceOne === "Tur" && choiceTwo === "kort" && <Suggestion suggestion={data.kortTurForslag} />}
+        {choiceOne === "Nå!" && choiceTwo === "Tur" && choiceThree === "Kort" && <Suggestion suggestion={data.kortTurForslag} />}
         
         {choiceTwo === "Spise ute" && choiceThree === "" && (
           <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.spisesteder}></QuestionsAndOptions>

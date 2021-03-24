@@ -1,14 +1,12 @@
 import React from "react";
 
 function Suggestion(suggestion) {
-  console.log(suggestion);
-  const logo = require("../Images/festningen.jfif");
   const data = suggestion.suggestion;
   return (
     <>
       {data && <p>{data.text}</p>}
 
-      {data.img && <img src={logo} alt="fint bilde"></img>}
+      {data.img && <img src={process.env.PUBLIC_URL + data.img} alt="fint bilde" height={400} width={600}></img>}
     </>
   );
 }

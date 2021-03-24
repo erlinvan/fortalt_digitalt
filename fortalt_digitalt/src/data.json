@@ -1,35 +1,64 @@
 {
     "choiceOne": {
         "question": "Hva vil du finne på?",
-        "options": ["Tur", "Sport", "Spise ute", "Kulturopplevelser"]
+        "options": [
+            "Tur",
+            "Sport",
+            "Spise ute",
+            "Kulturopplevelser"
+        ]
     },
     "turValg": {
         "question": "Vil du gå en kort eller lang tur?",
-        "options": ["Kort", "Lang"]
+        "options": [
+            "Kort",
+            "Lang"
+        ]
     },
     "spisesteder": {
         "question": "Hva er du ute etter?",
-        "options": ["Byens billigste øl!", "Fancy, men rimelig mat", "Bar med aktiviteter"]
+        "options": [
+            "Byens billigste øl!",
+            "Fancy, men rimelig mat",
+            "Bar med aktiviteter"
+        ]
     },
     "kultur": {
         "question": "Hva er du ute etter?",
-        "options": ["Museum", "Historiske steder", "Noe utenom det vanlige"]
+        "options": [
+            "Museum",
+            "Historiske steder",
+            "Noe utenom det vanlige"
+        ]
     },
-"tidsspm": {
-    "question": "Vil du gjøre noe nå eller planlegge noe til senere?",
-    "options": ["Nå!", "Planlegge til senere"]
-},
-"sport": {
-    "question": "Velg aktivitet",
-    "options": ["NTNU Idrett", "Ski", "Diskgolf", "Golf", "Pirbadet"]
-},
-"sport2": {
-    "question": "Velg aktivitet",
-    "options": ["Ski", "Diskgolf", "Golf", "Pirbadet"]
-},
-
+    "tidsspm": {
+        "question": "Vil du gjøre noe nå eller planlegge noe til senere?",
+        "options": [
+            "Nå!",
+            "Planlegge til senere"
+        ]
+    },
+    "sport": {
+        "question": "Velg aktivitet",
+        "options": [
+            "NTNU Idrett",
+            "Ski",
+            "Diskgolf",
+            "Golf",
+            "Pirbadet"
+        ]
+    },
+    "sport2": {
+        "question": "Velg aktivitet",
+        "options": [
+            "Ski",
+            "Diskgolf",
+            "Golf",
+            "Pirbadet"
+        ]
+    },
     "kortTurForslag": {
         "text": "Kort tur er bra for kroppen. Vi anbefaler disse turene",
-        "img": "/Images/festningen.jfif"
+        "img": "kuhaugen.jpg"
     }
 }
