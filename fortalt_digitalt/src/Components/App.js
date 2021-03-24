@@ -6,13 +6,8 @@ import isDay from "../Common/time";
 //import getNearbyRestaurants from "../Common/maps";
 
 // Components
-<<<<<<< HEAD
-import { Grid } from "@material-ui/core";
-import TopBar from "./TopBar";
-=======
 import { Box, Grid } from "@material-ui/core";
-import Title from "./TopBar";
->>>>>>> 9cc4a15d78ceee6a86e8543453e40db7cf945a29
+import TopBar from "./TopBar";
 import Content from "./Content";
 import DynamicIcons from "./DynamicIcons";
 import BottomBar from "./BottomBar";
