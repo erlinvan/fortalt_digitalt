@@ -2,7 +2,10 @@ const i18_en = {
 	"Title": "Told Digitally",
 	"Group": "Group",
 	"Welcome1": "Hey!",
-	"Welcome2": "Here you can find suggestions for new stuff to do"
+	"Welcome2": "Here you can find suggestions for new stuff to do",
+	"TimeTooltip": "Time of day",
+	"WeatherTooltip": "Weather in Trondheim",
+	"DragTooltip": "Try dragging me!"
 };
 
 export default i18_en;

@@ -14,6 +14,7 @@ import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from '@material-ui/icons/Home';
 import LanguageIcon from '@material-ui/icons/Language';
 import { motion } from "framer-motion";
+import Tooltip from '@material-ui/core/Tooltip';
 
 // Styling
 import { makeStyles } from '@material-ui/core/styles';
@@ -27,10 +28,10 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         flexGrow: 1,
+        marginLeft: theme.spacing(2)
     },
     logo: {
-        display: 'flex',
-        marginRight: theme.spacing(2)
+        display: 'flex'
     },
     logoimg: {
         userDrag: 'none',
@@ -81,19 +82,21 @@ function TopBar() {
     return (
         <AppBar position="static">
             <Toolbar>
-                <motion.div drag     
-                    dragConstraints={{
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    }} 
-                    dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-                    whileTap={{ scale: 0.8 }} className={classes.logo}
-                >
-                    <img src="logo.png" className={classes.logoimg}/>
-                    <a className={classes.logoemoji}>{getRandomEmoji()}</a>
-                </motion.div>
+                <Tooltip title={t('DragTooltip')}>
+                    <motion.div drag     
+                        dragConstraints={{
+                        top: 0,
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        }} 
+                        dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
+                        whileTap={{ scale: 0.8 }} className={classes.logo}
+                    >
+                        <img src="logo.png" className={classes.logoimg}/>
+                        <a className={classes.logoemoji}>{getRandomEmoji()}</a>
+                    </motion.div>
+                </Tooltip>
                 <Typography variant="h6" className={classes.title}>
                     {t('Title')}
                 </Typography>

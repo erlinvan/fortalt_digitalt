@@ -1,7 +1,12 @@
 import React from "react";
+
+// Components
 import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Typography } from "@material-ui/core";
+import { motion } from "framer-motion";
+
+// Styling
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -32,17 +37,19 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
           data.options &&
           data.options.map((e) => (
             <Grid item xs={4} md={4} key={e}>
-              <Paper
-                elevation={2}
-                key={e}
-                id={e}
-                onClick={(e) => {
-                  handleChange(e);
-                }}
-                className={classes.paper}
-              >
-                <Typography variant="p">{e}</Typography>
-              </Paper>
+              <motion.div whileHover={{ scale: 0.9 }}>
+                <Paper
+                  elevation={2}
+                  key={e}
+                  id={e}
+                  onClick={(e) => {
+                    handleChange(e);
+                  }}
+                  className={classes.paper}
+                >
+                  <Typography variant="body1">{e}</Typography>
+                </Paper>
+              </motion.div>
             </Grid>
           ))}
       </Grid>
