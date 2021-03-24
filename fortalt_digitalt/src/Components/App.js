@@ -9,6 +9,7 @@ import isDay from "../Common/time";
 import { Grid } from "@material-ui/core";
 import Title from "./TopBar";
 import Content from "./Content";
+import DynamicIcons from "./DynamicIcons";
 import Footer from "./BottomBar";
 
 // Styling
@@ -42,6 +43,7 @@ function App() {
           <Content />
         </Grid>
       </Grid>
+      <DynamicIcons />
       <Footer />
     </ThemeProvider>
   );

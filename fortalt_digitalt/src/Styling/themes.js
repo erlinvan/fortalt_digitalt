@@ -2,10 +2,6 @@ import green from '@material-ui/core/colors/green';
 import lightGreen from '@material-ui/core/colors/lightGreen';
 import amber from '@material-ui/core/colors/amber';
 
-// Icons
-import sun from './sun.png';
-import moon from './moon.png';
-
 export const lightTheme = {
     palette: {
         primary: {
@@ -19,10 +15,10 @@ export const lightTheme = {
       MuiCssBaseline: {
         '@global': {
           body: {
-            backgroundPosition: '97% 95%',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            backgroundImage: `url(${sun})`
+            //backgroundPosition: '97% 95%',
+            //backgroundRepeat: 'no-repeat',
+            //backgroundAttachment: 'fixed',
+            //backgroundImage: `url(${sun})`
           }
         }
       }
@@ -43,10 +39,10 @@ export const darkTheme = {
       MuiCssBaseline: {
         '@global': {
           body: {
-            backgroundPosition: '97% 95%',
-            backgroundRepeat: 'no-repeat',
-            backgroundAttachment: 'fixed',
-            backgroundImage: `url(${moon})`
+            //backgroundPosition: '97% 95%',
+            //backgroundRepeat: 'no-repeat',
+            //backgroundAttachment: 'fixed',
+            //backgroundImage: `url(${moon})`
           }
         }
       }
