@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ChoiceOne = ({ choice, setChoice, data }) => {
   const handleChange = (event) => {
-    setChoice(event.target.id);
+    setChoice(event.currentTarget.id);
   };
   const classes = useStyles();
 
@@ -36,15 +36,16 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
         {data &&
           data.options &&
           data.options.map((e) => (
-            <Grid item xs={4} md={4} key={e}>
-              <motion.div whileHover={{ scale: 0.9 }}>
+            <Grid item 
+              xs={4} 
+              md={4} 
+              key={e}
+              id={e}
+              onClick={handleChange}
+            >
+              <motion.div whileHover={{ scale: 0.8 }}>
                 <Paper
                   elevation={2}
-                  key={e}
-                  id={e}
-                  onClick={(e) => {
-                    handleChange(e);
-                  }}
                   className={classes.paper}
                 >
                   <Typography variant="body1">{e}</Typography>
