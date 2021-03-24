@@ -1,7 +1,7 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -24,7 +24,7 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
     <>
       <Grid container spacing={8} direction="column" alignItems="center">
         <Grid item>
-          <h3>{data.question}</h3>
+          <Typography variant="h6">{data.question}</Typography>
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
@@ -41,7 +41,7 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
                 }}
                 className={classes.paper}
               >
-                {e}
+                <Typography variant="p">{e}</Typography>
               </Paper>
             </Grid>
           ))}
