@@ -1,13 +1,16 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     maxWidth: 800,
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2),
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
 }));
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 // Common
 import isDay from "../Common/time";
 //import getNearbyRestaurants from "../Common/maps";
 
 // Components
-import { Grid } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 import Title from "./TopBar";
 import Content from "./Content";
 import DynamicIcons from "./DynamicIcons";
@@ -28,7 +28,7 @@ function getTimeTheme() {
 }
 
 function App() {
-  const {t, i18n} = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <ThemeProvider theme={theme}>
@@ -36,11 +36,13 @@ function App() {
       <Title />
       <Grid container direction="column" alignItems="center">
         <Grid item>
-          <h1>{t('Welcome1')}</h1>
-          <p>{t('Welcome2')}</p>
+          <h1>{t("Welcome1")}</h1>
+          <p>{t("Welcome2")}</p>
         </Grid>
         <Grid item zeroMinWidth>
-          <Content />
+          <Box width={800}>
+            <Content />
+          </Box>
         </Grid>
       </Grid>
       <DynamicIcons />
