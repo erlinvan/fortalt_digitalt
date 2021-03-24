@@ -11,6 +11,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 // Data
 import Data from "../data.json";
+import Suggestion from "./Suggestion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,7 +46,7 @@ function Content() {
         {choiceTwo === "Tur" && choiceThree === "" && (
           <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.turValg}></QuestionsAndOptions>
         )}
-        {choiceTwo === "Tur" && choiceThree === "Kort" && <h4> her står det noe om korte turere</h4>}
+        {choiceOne === "Tur" && choiceTwo === "kort" && <Suggestion suggestion={data.kortTurForslag} />}
         
         {choiceTwo === "Spise ute" && choiceThree === "" && (
           <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.spisesteder}></QuestionsAndOptions>

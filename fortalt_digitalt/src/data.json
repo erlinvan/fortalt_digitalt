@@ -26,6 +26,10 @@
 "sport2": {
     "question": "Velg aktivitet",
     "options": ["Ski", "Diskgolf", "Golf", "Pirbadet"]
-}
+},
 
+    "kortTurForslag": {
+        "text": "Kort tur er bra for kroppen. Vi anbefaler disse turene",
+        "img": "/Images/festningen.jfif"
+    }
 }
