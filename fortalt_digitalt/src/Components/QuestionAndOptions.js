@@ -1,13 +1,16 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Typography } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     maxWidth: 800,
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2),
+    "&:hover": {
+      cursor: "pointer",
+    },
   },
 }));
 
@@ -21,14 +24,14 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
     <>
       <Grid container spacing={8} direction="column" alignItems="center">
         <Grid item>
-          <h3>{data.question}</h3>
+          <Typography variant="h6">{data.question}</Typography>
         </Grid>
       </Grid>
       <Grid container spacing={2} alignItems="center">
         {data &&
           data.options &&
           data.options.map((e) => (
-            <Grid item xs={3} md={3} key={e}>
+            <Grid item xs={4} md={4} key={e}>
               <Paper
                 elevation={2}
                 key={e}
@@ -38,7 +41,7 @@ const ChoiceOne = ({ choice, setChoice, data }) => {
                 }}
                 className={classes.paper}
               >
-                {e}
+                <Typography variant="p">{e}</Typography>
               </Paper>
             </Grid>
           ))}
