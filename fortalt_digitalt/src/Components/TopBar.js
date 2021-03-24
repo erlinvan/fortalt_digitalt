@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex'
     },
     logoimg: {
+        borderRadius: 0,
         userDrag: 'none',
         width: '35px',
         '&:hover': {

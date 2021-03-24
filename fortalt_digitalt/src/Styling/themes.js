@@ -17,6 +17,9 @@ export const lightTheme = {
     overrides: {
       MuiCssBaseline: {
         '@global': {
+          img: {
+            borderRadius: '16px'
+          },
           body: {
             //backgroundPosition: '97% 95%',
             //backgroundRepeat: 'no-repeat',
