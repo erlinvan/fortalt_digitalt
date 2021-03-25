@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
-  },
+  }
 }));
 
 function Content() {
@@ -60,7 +60,7 @@ function Content() {
             action={
               data[choice].parent && (
                 <Tooltip title={t('BackTooltip')}>
-                  <IconButton edge="start" onClick={reDoQuestion}>
+                  <IconButton edge="end" color="secondary" onClick={reDoQuestion} >
                     <ArrowBackIcon />
                   </IconButton>
                 </Tooltip>

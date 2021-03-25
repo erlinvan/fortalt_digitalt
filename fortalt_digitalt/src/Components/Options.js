@@ -30,7 +30,7 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
     }
   };
 
-  const renderOption = (key) => {
+  const renderOption = (key, num) => {
     let id = data['options'][key];
 
     // Check object requirements if there are any
@@ -48,11 +48,12 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
       id = id.id;
     }
 
+    // If requirements are met, render
     return (          
       <Grid item 
         xs={4} 
         md={4} 
-        key={id}
+        key={id + num}
         id={id}
         onClick={handleChange}
       >
@@ -71,7 +72,7 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
   return (
     <Grid container spacing={2} alignItems="center">
       {'options' in data && Object.keys(data['options']).map((key, num) => (
-        renderOption(key)
+        renderOption(key, num)
       ))}
     </Grid>
   );
