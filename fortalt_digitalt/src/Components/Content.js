@@ -47,7 +47,7 @@ function Content() {
     }
   };
 
-  const handleChange = (event) => {
+  const handleChange = () => {
     setWhen(!when);
     setChoice('choiceOne');
   };

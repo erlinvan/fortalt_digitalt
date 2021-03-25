@@ -3,7 +3,7 @@ import lightGreen from '@material-ui/core/colors/lightGreen';
 import amber from '@material-ui/core/colors/amber';
 
 // Icons
-import stars from './stars.svg';
+import background from './background.png';
 
 export const lightTheme = {
     palette: {
@@ -21,10 +21,12 @@ export const lightTheme = {
             borderRadius: '16px'
           },
           body: {
-            //backgroundPosition: '97% 95%',
-            //backgroundRepeat: 'no-repeat',
-            //backgroundAttachment: 'fixed',
-            //backgroundImage: `url(${sun})`
+            backgroundPositionX: 'center',
+            backgroundPositionY: '500px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'auto 70%',
+            backgroundAttachment: 'fixed',
+            backgroundImage: `url(${background})`
           }
         }
       }
@@ -44,11 +46,16 @@ export const darkTheme = {
     overrides: {
       MuiCssBaseline: {
         '@global': {
+          img: {
+            borderRadius: '16px'
+          },
           body: {
-            //backgroundPosition: '97% 95%',
-            //backgroundRepeat: 'no-repeat',
-            //backgroundAttachment: 'fixed',
-            //backgroundImage: `url(${stars})`
+            backgroundPositionX: 'center',
+            backgroundPositionY: '500px',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'auto 70%',
+            backgroundAttachment: 'fixed',
+            backgroundImage: `url(${background})`
           }
         }
       }

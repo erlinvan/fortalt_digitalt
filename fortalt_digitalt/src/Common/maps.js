@@ -21,7 +21,5 @@ export default async function getNearbyRestaurants() {
     });
 
     const data = await response.json();
-	console.log(data);
-
     return data;
   }

@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getTimeTheme() {
-  if (isDay()) {
+  if (!isDay()) {
     return createMuiTheme(lightTheme);
   } else {
     return createMuiTheme(darkTheme);
@@ -46,15 +46,22 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <TopBar />
-      <Grid container direction="column" alignItems="center" spacing={2} className={classes.grid}>
-        <Grid item>
-          <Typography variant="h3">{t('Welcome1')}</Typography>
-          <Typography variant="body1">{t('Welcome2')}</Typography>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="70vh"
+      >
+        <Grid container direction="column" alignItems="center" spacing={4} className={classes.grid}>
+          <Grid item>
+            <Typography variant="h3">{t('Welcome1')}</Typography>
+            <Typography variant="body1">{t('Welcome2')}</Typography>
+          </Grid>
+          <Grid item zeroMinWidth>
+              <Content />
+          </Grid>
         </Grid>
-        <Grid item zeroMinWidth>
-            <Content />
-        </Grid>
-      </Grid>
+      </Box>
       <Box className={classes.unselectable}>
         <DynamicIcons />
         <BottomBar />

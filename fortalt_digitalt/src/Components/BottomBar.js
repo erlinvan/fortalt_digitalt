@@ -18,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
         opacity: '50%',
         width: '100%'
+    },
+    copyright: {
+        color: 'white'
     }
 }));
 
@@ -27,7 +30,7 @@ function BottomBar() {
 
     return (
         <Box className={classes.root}>
-            <Typography variant="body1">
+            <Typography variant="body1" className={classes.copyright}>
                 {new Date().getFullYear()} Copyright: {t('Group')} 4,  
                 <Link color="inherit" href="https://www.ntnu.no/eit/eit3014"> EiT </Link>
             </Typography>
