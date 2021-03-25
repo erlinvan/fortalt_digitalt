@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 // Data
 import Data from "../data.json";
 import Suggestion from "./Suggestion";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,53 +28,130 @@ function Content() {
   const [choiceThree, setChoiceThree] = React.useState("");
   const { t, i18n } = useTranslation();
 
+  const reDoQuestion = () => {
+    if (choiceThree !== "") {
+      setChoiceThree("");
+      return;
+    }
+    if (choiceTwo !== "") {
+      setChoiceTwo("");
+      return;
+    }
+    if (choiceOne !== "") {
+      setChoiceOne("");
+      return;
+    }
+  };
+
   console.log(choiceOne);
   const data = Data;
   console.log(data);
   return (
     <Card className={classes.root}>
       <CardContent>
-
         {choiceOne === "" && (
-          <QuestionsAndOptions choice={choiceOne} setChoice={setChoiceOne} data={data.tidsspm}></QuestionsAndOptions>
+          <QuestionsAndOptions
+            choice={choiceOne}
+            setChoice={setChoiceOne}
+            data={data.tidsspm}
+          ></QuestionsAndOptions>
         )}
-        {choiceOne === "Nå!" && choiceTwo === "" &&(
-          <QuestionsAndOptions choice={choiceTwo} setChoice={setChoiceTwo} data={data.choiceOne}></QuestionsAndOptions>
+        {choiceOne === "Nå!" && choiceTwo === "" && (
+          <QuestionsAndOptions
+            choice={choiceTwo}
+            setChoice={setChoiceTwo}
+            data={data.choiceOne}
+          ></QuestionsAndOptions>
         )}
-        {choiceOne === "Planlegge til senere" && choiceTwo === "" &&(
-          <QuestionsAndOptions choice={choiceTwo} setChoice={setChoiceTwo} data={data.choiceOne}></QuestionsAndOptions>
+        {choiceOne === "Planlegge til senere" && choiceTwo === "" && (
+          <QuestionsAndOptions
+            choice={choiceTwo}
+            setChoice={setChoiceTwo}
+            data={data.choiceOne}
+          ></QuestionsAndOptions>
         )}
         {choiceTwo === "Tur" && choiceThree === "" && (
-          <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.turValg}></QuestionsAndOptions>
+          <QuestionsAndOptions
+            choice={choiceThree}
+            setChoice={setChoiceThree}
+            data={data.turValg}
+          ></QuestionsAndOptions>
         )}
-        {choiceOne === "Nå!" && choiceTwo === "Tur" && choiceThree === "Kort" && <Suggestion suggestion={data.kortTurForslag} />}
-        
-        {choiceTwo === "Spise ute" && choiceThree === "" && (
-          <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.spisesteder}></QuestionsAndOptions>
-        )}
-        {choiceTwo === "Spise ute" && choiceThree === "Byens billigste øl!" && <h4> Superhero Pizza og Samfundet</h4>}
-        {choiceTwo === "Spise ute" && choiceThree === "Fancy, men rimelig mat" && <h4> Edoramen og Le Bistro</h4>}
-        {choiceTwo === "Spise ute" && choiceThree === "Bar med aktiviteter" && <h4> Trondheim Camping og Work-Work</h4>}
-        
-        {choiceTwo === "Kulturopplevelser" && choiceThree === "" && (
-          <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.kultur}></QuestionsAndOptions>
-        )}
-        {choiceTwo === "Kulturopplevelser" && choiceThree === "Museum" && <h4> Ringve og Rockheim</h4>}
-        {choiceTwo === "Kulturopplevelser" && choiceThree === "Historiske steder" && <h4> Historisk tur? </h4>}
-        {choiceTwo === "Kulturopplevelser" && choiceThree === "Noe utenom det vanlige" && <h4> idk </h4>}
-        
-        {choiceOne === "Planlegge til senere" && choiceTwo === "Sport" && choiceThree === "" && (
-          <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.sport}></QuestionsAndOptions>
-        )}
-        {choiceOne === "Nå!" && choiceTwo === "Sport" && choiceThree === "" && (
-          <QuestionsAndOptions choice={choiceThree} setChoice={setChoiceThree} data={data.sport2}></QuestionsAndOptions>
-        )}
-        {choiceTwo === "Sport" && choiceThree === "NTNU Idrett" && <h4> Her kommer info om NTNUI</h4>}
-        {choiceTwo === "Sport" && choiceThree === "Ski" && <h4> Noen fine skiturer om vinteren </h4>}
-        {choiceTwo === "Sport" && choiceThree === "Diskgolf" && <h4> Peker ut diskgolfbaner! </h4>}
-        {choiceTwo === "Sport" && choiceThree === "Golf" && <h4> Billig golfmedlemskap </h4>}
-        {choiceTwo === "Sport" && choiceThree === "Pirbadet" && <h4> Pirbadet info </h4>}
+        {choiceOne === "Nå!" &&
+          choiceTwo === "Tur" &&
+          choiceThree === "Kort" && (
+            <Suggestion suggestion={data.kortTurForslag} />
+          )}
 
+        {choiceTwo === "Spise ute" && choiceThree === "" && (
+          <QuestionsAndOptions
+            choice={choiceThree}
+            setChoice={setChoiceThree}
+            data={data.spisesteder}
+          ></QuestionsAndOptions>
+        )}
+        {choiceTwo === "Spise ute" && choiceThree === "Byens billigste øl!" && (
+          <h4> Superhero Pizza og Samfundet</h4>
+        )}
+        {choiceTwo === "Spise ute" &&
+          choiceThree === "Fancy, men rimelig mat" && (
+            <h4> Edoramen og Le Bistro</h4>
+          )}
+        {choiceTwo === "Spise ute" && choiceThree === "Bar med aktiviteter" && (
+          <h4> Trondheim Camping og Work-Work</h4>
+        )}
+
+        {choiceTwo === "Kulturopplevelser" && choiceThree === "" && (
+          <QuestionsAndOptions
+            choice={choiceThree}
+            setChoice={setChoiceThree}
+            data={data.kultur}
+          ></QuestionsAndOptions>
+        )}
+        {choiceTwo === "Kulturopplevelser" && choiceThree === "Museum" && (
+          <h4> Ringve og Rockheim</h4>
+        )}
+        {choiceTwo === "Kulturopplevelser" &&
+          choiceThree === "Historiske steder" && <h4> Historisk tur? </h4>}
+        {choiceTwo === "Kulturopplevelser" &&
+          choiceThree === "Noe utenom det vanlige" && <h4> idk </h4>}
+
+        {choiceOne === "Planlegge til senere" &&
+          choiceTwo === "Sport" &&
+          choiceThree === "" && (
+            <QuestionsAndOptions
+              choice={choiceThree}
+              setChoice={setChoiceThree}
+              data={data.sport}
+            ></QuestionsAndOptions>
+          )}
+        {choiceOne === "Nå!" && choiceTwo === "Sport" && choiceThree === "" && (
+          <QuestionsAndOptions
+            choice={choiceThree}
+            setChoice={setChoiceThree}
+            data={data.sport2}
+          ></QuestionsAndOptions>
+        )}
+        {choiceTwo === "Sport" && choiceThree === "NTNU Idrett" && (
+          <h4> Her kommer info om NTNUI</h4>
+        )}
+        {choiceTwo === "Sport" && choiceThree === "Ski" && (
+          <h4> Noen fine skiturer om vinteren </h4>
+        )}
+        {choiceTwo === "Sport" && choiceThree === "Diskgolf" && (
+          <h4> Peker ut diskgolfbaner! </h4>
+        )}
+        {choiceTwo === "Sport" && choiceThree === "Golf" && (
+          <h4> Billig golfmedlemskap </h4>
+        )}
+        {choiceTwo === "Sport" && choiceThree === "Pirbadet" && (
+          <h4> Pirbadet info </h4>
+        )}
+      </CardContent>
+      <CardContent>
+        <Button variant="contained" color="secondary" onClick={reDoQuestion}>
+          Angre på forrige svar
+        </Button>
       </CardContent>
     </Card>
   );
