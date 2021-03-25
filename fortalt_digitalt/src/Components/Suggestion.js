@@ -1,17 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 // Components
 import { Grid, Typography } from "@material-ui/core";
 import { motion } from "framer-motion"
-
-// Styling
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  img: {
-    position: 'relative'
-  }
-}));
 
 const bounceTransition = {
   y: {
@@ -21,36 +13,32 @@ const bounceTransition = {
   },
 }
 
-function Suggestion(suggestion) {
-  const classes = useStyles();
-  const data = suggestion.suggestion;
-  
+function Suggestion({data}) {
+  const { t, i18n } = useTranslation();
+
   return (
-    <>
-      <Grid container alignItems="center">
-        {data && (
-          <Grid item>
-            <Typography variant="body1">{data.text}</Typography>
-          </Grid>
-        )}
-        {data.img && (
-          <motion.div
-            animate={{ y: ["3%", "0%"] }}
-            transition={bounceTransition}
-            className={classes.img}
-          >
-          <Grid item>
-            <img
-              src={process.env.PUBLIC_URL + data.img}
-              alt="fint bilde"
-              height={400}
-              width={600}
-            ></img>
-          </Grid>
-          </motion.div>
-        )}
-      </Grid>
-    </>
+    <Grid container alignItems="center">
+      {data.text && (
+        <Grid item>
+          <Typography variant="body1">{t(data.text)}</Typography>
+        </Grid>
+      )}
+      {data.img && (
+        <motion.div
+          animate={{ y: ["3%", "0%"] }}
+          transition={bounceTransition}
+        >
+        <Grid item>
+          <img
+            src={data.img}
+            alt="fint bilde"
+            height={400}
+            width={600}
+          ></img>
+        </Grid>
+        </motion.div>
+      )}
+    </Grid>
   );
 }
 

@@ -101,12 +101,16 @@ function TopBar() {
                 <Typography variant="h6" className={classes.title}>
                     {t('Title')}
                 </Typography>
-                <IconButton edge="start" onClick={handleClick} className={classes.button} color="inherit" aria-controls="simple-menu" aria-haspopup="true">
-                    <LanguageIcon />
-                </IconButton>
-                <IconButton edge="start" onClick={refreshPage} className={classes.button} color="inherit" aria-label="menu">
-                    <HomeIcon />
-                </IconButton>
+                <Tooltip title={t('LangTooltip')}>
+                    <IconButton edge="start" onClick={handleClick} className={classes.button} color="inherit" aria-controls="simple-menu" aria-haspopup="true">
+                        <LanguageIcon />
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title={t('HomeTooltip')}>
+                    <IconButton edge="start" onClick={refreshPage} className={classes.button} color="inherit" aria-label="menu">
+                        <HomeIcon />
+                    </IconButton>
+                </Tooltip>
             </Toolbar>
             <Menu
                 id="simple-menu"

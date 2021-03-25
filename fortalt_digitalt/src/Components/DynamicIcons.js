@@ -4,9 +4,10 @@ import { useAsync, IfFulfilled } from "react-async"
 
 // Common
 import isDay from "../Common/time";
-import getWeather from "../Common/weather";
+import { getWeatherIcon } from "../Common/weather";
 
 // Components
+import Box from '@material-ui/core/Box';
 import Tooltip from '@material-ui/core/Tooltip';
 
 // Styling
@@ -27,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
 
 function DynamicIcons() {
     const classes = useStyles();
-    const state = useAsync({ promiseFn: getWeather});
+    const state = useAsync({ promiseFn: getWeatherIcon});
     const { t, i18n } = useTranslation();
 
     return (
-        <div className={classes.root}>
+        <Box className={classes.root}>
             <Tooltip title={t('TimeTooltip')}>
                 {isDay() ? 
                     <img src="icons/time/sun.png" />
@@ -46,7 +47,7 @@ function DynamicIcons() {
                     </Tooltip>
                 )}
             </IfFulfilled>
-        </div>
+        </Box>
     );
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 
 // Components
+import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
@@ -25,9 +26,12 @@ function BottomBar() {
     const { t, i18n } = useTranslation();
 
     return (
-        <div className={classes.root}>
-            <Typography variant="body1">{new Date().getFullYear()} Copyright: {t('Group')} 4,  <Link color="inherit" href="https://www.ntnu.no/eit/eit3014"> EiT </Link></Typography>
-        </div>
+        <Box className={classes.root}>
+            <Typography variant="body1">
+                {new Date().getFullYear()} Copyright: {t('Group')} 4,  
+                <Link color="inherit" href="https://www.ntnu.no/eit/eit3014"> EiT </Link>
+            </Typography>
+        </Box>
     );
 }
 
