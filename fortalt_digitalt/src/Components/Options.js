@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ChoiceOne = ({ data, setChoice, when, setWhen, weather }) => {
+const ChoiceOne = ({ data, setChoice, weather, when }) => {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
 
@@ -30,24 +30,47 @@ const ChoiceOne = ({ data, setChoice, when, setWhen, weather }) => {
     }
   };
 
+  const renderOption = (key) => {
+    let id = data['options'][key];
+
+    // Check object requirements if there are any
+    if (typeof id === 'object') {
+      const requirements = id.requires;
+
+      if (requirements.weather && requirements.weather != weather) {
+        return "";
+      }
+
+      if (requirements.when && (requirements.when === "now" ? true : false) != when) {
+        return "";
+      }
+
+      id = id.id;
+    }
+
+    return (          
+      <Grid item 
+        xs={4} 
+        md={4} 
+        id={id}
+        onClick={handleChange}
+      >
+        <motion.div whileHover={{ scale: 0.8 }}>
+          <Paper
+            elevation={2}
+            className={classes.paper}
+          >
+            <Typography variant="body1">{t(key)}</Typography>
+          </Paper>
+        </motion.div>
+      </Grid>
+    );
+  }
+
   return (
     <Grid container spacing={2} alignItems="center">
-      {'options' in data && Object.keys(data['options']).map((text, value) => (
-        <Grid item 
-          xs={4} 
-          md={4} 
-          id={data['options'][text]}
-          onClick={handleChange}
-        >
-          <motion.div whileHover={{ scale: 0.8 }}>
-            <Paper
-              elevation={2}
-              className={classes.paper}
-            >
-              <Typography variant="body1">{t(text)}</Typography>
-            </Paper>
-          </motion.div>
-        </Grid>
+      {'options' in data && Object.keys(data['options']).map((key, num) => (
+        renderOption(key)
       ))}
     </Grid>
   );

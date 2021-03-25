@@ -39,10 +39,11 @@ function Content() {
   const [choice, setChoice] = React.useState('choiceOne');
   const [when, setWhen] = React.useState(true);
   const { t, i18n } = useTranslation();
+  const data = Data;
 
   const reDoQuestion = () => {
-    if (('parent' in Data[choice])) {
-      setChoice(Data[choice]['parent'])
+    if (('parent' in data[choice])) {
+      setChoice(data[choice]['parent'])
     }
   };
 
@@ -53,11 +54,11 @@ function Content() {
   
   return (
     <Card className={classes.root}>
-      {choice in Data && (
+      {choice in data && (
         <>
           <CardHeader
             action={
-              Data[choice].parent && (
+              data[choice].parent && (
                 <Tooltip title={t('BackTooltip')}>
                   <IconButton edge="start" onClick={reDoQuestion}>
                     <ArrowBackIcon />
@@ -65,15 +66,15 @@ function Content() {
                 </Tooltip>
               )
             }
-            title={t(Data[choice]['question'])}
+            title={t(data[choice]['question'])}
 
           />
           <CardContent>
-            {Data[choice].options && (
+            {data[choice].options && (
               <IfFulfilled state={state}>
                 {weather => (
                   <Options
-                    data={Data[choice]}
+                    data={data[choice]}
                     setChoice={setChoice}
                     weather={weather}
                     when={when}
@@ -81,26 +82,30 @@ function Content() {
                 )}
               </IfFulfilled>
             )}
-            {Data[choice].text && (
+            {data[choice].text && (
               <Suggestion 
-                data={Data[choice]}
+                data={data[choice]}
               />
             )}
           </CardContent>
-          {Data[choice].options && (
+          {data[choice].options && (
             <CardActions disableSpacing>
-            <FormGroup>
-              <Typography component="div">
-                <Grid component="label" container alignItems="center" spacing={1}>
-                  <Grid item>{t("ChoiceTomorrow")}</Grid>
-                  <Grid item>
-                    <Switch checked={when} onChange={handleChange} />
-                  </Grid>
-                  <Grid item>{t("ChoiceToday")}</Grid>
+              <Grid container direction="column" alignItems="center">
+                <Grid item>
+                <FormGroup>
+                  <Typography component="div">
+                    <Grid component="label" container alignItems="center" spacing={1}>
+                      <Grid item>{t("ChoiceTomorrow")}</Grid>
+                      <Grid item>
+                        <Switch checked={when} onChange={handleChange} />
+                      </Grid>
+                      <Grid item>{t("ChoiceToday")}</Grid>
+                    </Grid>
+                  </Typography>
+                </FormGroup>
                 </Grid>
-              </Typography>
-            </FormGroup>
-          </CardActions>
+              </Grid>
+            </CardActions>
           )}
         </>
       )}

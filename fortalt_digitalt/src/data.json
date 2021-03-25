@@ -10,9 +10,14 @@
     },
     "turValg": {
         "parent": "choiceOne",
-        "question": "Vil du gå en kort eller lang tur?",
+        "question": "Hvilken type tur vil du gå?",
         "options": {
-            "Kort": "kortTurForslag",
+            "Kort": {
+                "id": "kortTurForslag",
+                "requires": {
+                    "when": "now"
+                }
+            },
             "Lang": ""
         }
     },
