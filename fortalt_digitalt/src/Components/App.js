@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function getTimeTheme() {
-  if (!isDay()) {
+  if (isDay()) {
     return createMuiTheme(lightTheme);
   } else {
     return createMuiTheme(darkTheme);
