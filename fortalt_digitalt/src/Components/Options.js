@@ -52,6 +52,7 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
       <Grid item 
         xs={4} 
         md={4} 
+        key={id}
         id={id}
         onClick={handleChange}
       >
