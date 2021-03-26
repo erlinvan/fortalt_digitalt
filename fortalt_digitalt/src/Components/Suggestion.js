@@ -5,38 +5,56 @@ import { useTranslation } from "react-i18next";
 import { Grid, Typography } from "@material-ui/core";
 import { motion } from "framer-motion"
 
+// Styling
+import { makeStyles } from "@material-ui/core/styles";
+
 const bounceTransition = {
   y: {
     duration: 0.8,
     yoyo: Infinity,
     ease: "easeOut",
-  },
+  }
 }
 
+const useStyles = makeStyles((theme) => ({
+  img: {
+    height: 400,
+    width: '100%',
+    objectFit: 'cover',
+    userSelect: 'none'
+  },
+}));
+
 function Suggestion({data}) {
+  const classes = useStyles();
   const { t, i18n } = useTranslation();
 
   return (
-    <Grid container alignItems="center">
+    <Grid container alignItems="center" spacing={2}>
       {data.text && (
-        <Grid item>
-          <Typography variant="body1">{t(data.text)}</Typography>
-        </Grid>
+        data.img 
+          ?
+          <Grid item xs={12} sm={5}>
+            <Typography variant="body1">{t(data.text)}</Typography>
+          </Grid>
+          :
+          <Grid item xs={12}>
+            <Typography variant="body1">{t(data.text)}</Typography>
+          </Grid>
       )}
       {data.img && (
-        <motion.div
-          animate={{ y: ["3%", "0%"] }}
-          transition={bounceTransition}
-        >
-        <Grid item>
-          <img
-            src={data.img}
-            alt="fint bilde"
-            height={400}
-            width={600}
-          ></img>
+        <Grid item xs={12} sm={7}>
+          <motion.div
+            animate={{ y: ["-3%", "0%"] }}
+            transition={bounceTransition}
+          >
+            <img
+              src={data.img}
+              alt="fint bilde"
+              className={classes.img}
+            />
+          </motion.div>
         </Grid>
-        </motion.div>
       )}
     </Grid>
   );

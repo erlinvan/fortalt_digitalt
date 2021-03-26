@@ -21,8 +21,13 @@ import { lightTheme, darkTheme } from "../Styling/themes";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
+  toolbar: theme.mixins.toolbar,
   grid: {
     width: '100%'
+  },
+  content: {
+    width: '100%',
+    maxWidth: '1000px'
   },
   unselectable: {
     userSelect: 'none'
@@ -46,6 +51,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <TopBar />
+      <div className={classes.toolbar} />
       <Box
         display="flex"
         justifyContent="center"
@@ -57,7 +63,7 @@ function App() {
             <Typography variant="h3">{t('Welcome1')}</Typography>
             <Typography variant="body1">{t('Welcome2')}</Typography>
           </Grid>
-          <Grid item zeroMinWidth>
+          <Grid item zeroMinWidth className={classes.content}>
               <Content />
           </Grid>
         </Grid>

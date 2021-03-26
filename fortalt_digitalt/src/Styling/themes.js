@@ -1,5 +1,4 @@
-import green from '@material-ui/core/colors/green';
-import lightGreen from '@material-ui/core/colors/lightGreen';
+import orange from '@material-ui/core/colors/orange';
 import amber from '@material-ui/core/colors/amber';
 
 // Icons
@@ -8,11 +7,9 @@ import background from './background.png';
 export const lightTheme = {
     palette: {
         primary: {
-          main: "#212F3C",
+          main: "#0D2F4D"
         },
-        secondary: {
-          main: amber[500],
-        }
+        secondary: amber
     },
     overrides: {
       MuiCssBaseline: {
@@ -22,10 +19,11 @@ export const lightTheme = {
           },
           body: {
             backgroundPositionX: 'center',
-            backgroundPositionY: '500px',
+            backgroundPositionY: '550px',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'auto 70%',
+            backgroundSize: 'auto 65%',
             backgroundAttachment: 'fixed',
+            backgroundBlendMode: 'normal',
             backgroundImage: `url(${background})`
           }
         }
@@ -37,11 +35,9 @@ export const darkTheme = {
     palette: {
         type: 'dark',
         primary: {
-          main: "#2471A3",
+          main: "#0D2F4D"
         },
-        secondary: {
-          main: amber[500],
-        }
+        secondary: amber
     },
     overrides: {
       MuiCssBaseline: {
@@ -51,10 +47,11 @@ export const darkTheme = {
           },
           body: {
             backgroundPositionX: 'center',
-            backgroundPositionY: '500px',
+            backgroundPositionY: '550px',
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'auto 70%',
+            backgroundSize: 'auto 65%',
             backgroundAttachment: 'fixed',
+            backgroundBlendMode: 'luminosity',
             backgroundImage: `url(${background})`
           }
         }

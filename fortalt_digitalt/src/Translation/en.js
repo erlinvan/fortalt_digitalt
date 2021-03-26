@@ -4,7 +4,7 @@ const i18_en = {
 	"Welcome1": "Hey!",
 	"Welcome2": "Here you can find suggestions for new stuff to do",
 	"ChoiceToday": "Today",
-	"ChoiceTomorrow": "Tomorrow",
+	"ChoiceFuture": "Future",
 	"LangTooltip": "Switch language",
 	"HomeTooltip": "Go home",
 	"BackTooltip": "Go back",

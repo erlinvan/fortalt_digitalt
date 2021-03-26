@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import getRandomEmoji from "../Common/emoji";
 
 // Components
+import Box from '@material-ui/core/Box';
+import Hidden from '@material-ui/core/Hidden';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Menu from '@material-ui/core/Menu';
@@ -31,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing(2)
     },
     logo: {
+        marginLeft: theme.spacing(2),
         display: 'flex'
     },
     logoimg: {
@@ -81,10 +84,10 @@ function TopBar() {
     }
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar>
                 <Tooltip title={t('DragTooltip')}>
-                    <motion.div drag     
+                    <motion.div drag
                         dragConstraints={{
                         top: 0,
                         left: 0,
@@ -92,15 +95,20 @@ function TopBar() {
                         bottom: 0,
                         }} 
                         dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-                        whileTap={{ scale: 0.8 }} className={classes.logo}
+                        whileTap={{ scale: 0.8 }} 
+                        className={classes.logo}
                     >
                         <img src="logo.png" className={classes.logoimg}/>
                         <a className={classes.logoemoji}>{getRandomEmoji()}</a>
                     </motion.div>
                 </Tooltip>
-                <Typography variant="h6" className={classes.title}>
-                    {t('Title')}
-                </Typography>
+                <Box className={classes.title}>
+                    <Hidden xsDown>
+                        <Typography variant="h6">
+                            {t('Title')}
+                        </Typography>
+                    </Hidden>
+                </Box>
                 <Tooltip title={t('LangTooltip')}>
                     <IconButton edge="start" onClick={handleClick} className={classes.button} color="inherit" aria-controls="simple-menu" aria-haspopup="true">
                         <LanguageIcon />

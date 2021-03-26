@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
       cursor: "pointer",
     },
   },
+  text: {
+    overflowWrap: 'break-word'
+  },
+  unselectable: {
+    userSelect: 'none'
+  },
 }));
 
 const ChoiceOne = ({ data, setChoice, weather, when }) => {
@@ -51,18 +57,20 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
     // If requirements are met, render
     return (          
       <Grid item 
-        xs={4} 
-        md={4} 
+        xs={12} 
+        sm={3} 
         key={id + num}
         id={id}
         onClick={handleChange}
+        zeroMinWidth
+        className={classes.unselectable}
       >
         <motion.div whileHover={{ scale: 0.8 }}>
           <Paper
             elevation={2}
             className={classes.paper}
           >
-            <Typography variant="body1">{t(key)}</Typography>
+            <Typography variant="body1" className={classes.text}>{t(key)}</Typography>
           </Paper>
         </motion.div>
       </Grid>
@@ -70,7 +78,7 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
   }
 
   return (
-    <Grid container spacing={2} alignItems="center">
+    <Grid container justify="center" alignItems="center" spacing={2}>
       {'options' in data && Object.keys(data['options']).map((key, num) => (
         renderOption(key, num)
       ))}

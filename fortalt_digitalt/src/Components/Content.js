@@ -6,6 +6,7 @@ import { useAsync, IfFulfilled } from "react-async"
 import { getWeatherType } from "../Common/weather";
 
 // Components
+import Hidden from '@material-ui/core/Hidden';
 import Grid from '@material-ui/core/Grid';
 import Card from "@material-ui/core/Card";
 import CardHeader from '@material-ui/core/CardHeader';
@@ -30,6 +31,15 @@ const useStyles = makeStyles((theme) => ({
   root: {
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
+  },
+  unselectable: {
+    userSelect: 'none'
+  },
+  switch_track: {
+    backgroundColor: theme.palette.secondary.main
+  },
+  switch_base: {
+    color: theme.palette.secondary.main
   }
 }));
 
@@ -59,15 +69,16 @@ function Content() {
           <CardHeader
             action={
               data[choice].parent && (
-                <Tooltip title={t('BackTooltip')}>
-                  <IconButton edge="end" color="secondary" onClick={reDoQuestion} >
-                    <ArrowBackIcon />
-                  </IconButton>
-                </Tooltip>
+                <Hidden xsDown>
+                  <Tooltip title={t('BackTooltip')}>
+                    <IconButton edge="end" color="secondary" onClick={reDoQuestion} >
+                      <ArrowBackIcon />
+                    </IconButton>
+                  </Tooltip>
+                </Hidden>
               )
             }
             title={t(data[choice]['question'])}
-
           />
           <CardContent>
             {data[choice].options && (
@@ -88,25 +99,43 @@ function Content() {
               />
             )}
           </CardContent>
-          {data[choice].options && (
-            <CardActions disableSpacing>
-              <Grid container direction="column" alignItems="center">
-                <Grid item>
+          <CardActions disableSpacing>
+            <Grid container direction="column" alignItems="center" spacing={1}>
+            {data[choice].options && (
+              <Grid item>
                 <FormGroup>
                   <Typography component="div">
-                    <Grid component="label" container alignItems="center" spacing={1}>
-                      <Grid item>{t("ChoiceTomorrow")}</Grid>
+                    <Grid component="label" container alignItems="center" spacing={1} className={classes.unselectable}>
+                      <Grid item>{t("ChoiceFuture")}</Grid>
                       <Grid item>
-                        <Switch checked={when} onChange={handleChange} />
+                        <Switch 
+                          checked={when} 
+                          onChange={handleChange}   
+                          classes={{
+                            track: classes.switch_track,
+                            switchBase: classes.switch_base,
+                          }}
+                        />
                       </Grid>
                       <Grid item>{t("ChoiceToday")}</Grid>
                     </Grid>
                   </Typography>
                 </FormGroup>
-                </Grid>
               </Grid>
-            </CardActions>
-          )}
+              )}
+              {data[choice].parent && (
+                <Hidden smUp>
+                  <Grid item>
+                      <Tooltip title={t('BackTooltip')}>
+                        <IconButton edge="end" color="secondary" onClick={reDoQuestion} >
+                          <ArrowBackIcon />
+                        </IconButton>
+                      </Tooltip>
+                  </Grid>
+                </Hidden>
+              )}
+            </Grid>
+          </CardActions>
         </>
       )}
     </Card>

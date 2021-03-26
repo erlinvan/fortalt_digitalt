@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        zIndex: -1,
         display: 'flex',
         position: 'fixed',
         justifyContent: 'center',
