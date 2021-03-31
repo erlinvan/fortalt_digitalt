@@ -13,46 +13,269 @@
         "question": "Hvilken type tur vil du gå?",
         "options": {
             "Kort": {
-                "id": "kortTurForslag",
+                "id": "forsvarsrunden",
                 "requires": {
                     "when": "now"
                 }
             },
-            "Lang": ""
+            "Lang": {
+                "id": "bymarka",
+                "requires": {
+                    "when": "now"
+                }
+            }
         }
     },
     "spisesteder": {
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Byens billigste øl!": "",
-            "Fancy, men rimelig mat": "",
-            "Bar med aktiviteter": ""
+            "Byens billigste øl!": {
+                "id": "superhero_pizza",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Fancy, men rimelig mat": {
+                "id": "sushi_bar",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Gøyale barkonsepter": {
+                "id": "workwork",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Middagsfavoritter": {
+                "id": "workwork",
+                "requires": {
+                    "when": "now"
+                }
+            }
         }
     },
     "kultur": {
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Museum": "",
+            "Museum": {
+                "id": "vitenskapsmuseet",
+                "requires": {
+                    "when": "now"
+                }
+            },
             "Historiske steder": "",
-            "Noe utenom det vanlige": ""
+            "Noe utenom det vanlige": {
+                "id": "loftet",
+                "requires": {
+                    "when": "now"
+                }
+            }
         }
     },
     "sport": {
         "parent": "choiceOne",
         "question": "Velg aktivitet",
         "options": {
-            "NTNU Idrett": "",
-            "Ski": "",
-            "Diskgolf": "",
-            "Golf": "",
-            "Pirbadet": ""
+            "NTNU Idrett": {
+                "id": "ntnui",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Ski": {
+                "id": "ski",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Skøyter": {
+                "id": "skoyter",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Diskgolf": {
+                "id": "diskgolf",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Pirbadet": {
+                "id": "pirbadet_bad",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Klatrehaller": {
+                "id": "klatring",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "SiT Trening": {
+                "id": "trening",
+                "requires": {
+                    "when": "now"
+                }
+            }
+
         }
     },
     "kortTurForslag": {
         "parent": "turValg",
         "text": "Kort tur er bra for kroppen. Vi anbefaler disse turene",
         "img": "kuhaugen.jpg"
+    },
+    "langTurForslag": {
+        "parent": "turValg",
+        "text": "Lang tur er bra for kroppen. Vi anbefaler disse turene",
+        "img": "kuhaugen.jpg"
+    },
+    "bakklandet": {
+        "parent": "turValg",
+        "text": "Øya - Bakklandet - Dersom du er på let etter en kort dagstur i Trondheim vil denne turen være den rette for deg.",
+        "img": "bakklandet.png"
+    },
+    "pirbadet_tur": {
+        "parent": "turValg",
+        "text": "Skansen - pirbadet",
+        "img": "pirbadet.png"
+    },
+    "forsvarsrunden": {
+        "parent": "turValg",
+        "text": "Forsvarsrunden",
+        "img": "forsvarsrunden.png"
+    },
+    "ilabekken": {
+        "parent": "turValg",
+        "text": "Ilabekken/Theisendammen",
+        "img": "ilabekken.png"
+    },
+    "sluppenbrua": {
+        "parent": "turValg",
+        "text": "Sluppenbrua - Nedre Leirfoss",
+        "img": "sluppenbrua.png"
+    },
+    "burmaklippen": {
+        "parent": "turValg",
+        "text": "Estenstadmarka og Burmaklippen",
+        "img": "burmaklippen.png"
+    },
+    "elgsethytta": {
+        "parent": "turValg",
+        "text": "Elgsethytta",
+        "img": "elgsethytta.png"
+    },
+    "ladestien": {
+        "parent": "turValg",
+        "text": "Ladestien",
+        "img": "ladestien.png"
+    },
+    "bymarka": {
+        "parent": "turValg",
+        "text": "Bymarka",
+        "img": "bymarka.png"
+    },
+    "rockheim": {
+        "parent": "kultur",
+        "text": "Rockheim",
+        "img": "rockheim.png"
+    },
+    "ringve": {
+        "parent": "kultur",
+        "text": "Ringve Musikkmuseum",
+        "img": "ringve.png"
+    },
+    "vitenskapsmuseet": {
+        "parent": "kultur",
+        "text": "NTNU Vitenskapsmuseet",
+        "img": "vitenskapsmuseet.png"
+    },
+    "salamandernatten": {
+        "parent": "kultur",
+        "text": "Salamandernatten",
+        "img": "salamandernatten.png"
+    },
+    "cinemateket": {
+        "parent": "kultur",
+        "text": "Cinemateket",
+        "img": "cinemateket.png"
+    },
+    "loftet": {
+        "parent": "kultur",
+        "text": "Loftet på moholt",
+        "img": "loftet.png"
+    },
+    "ntnui": {
+        "parent": "sport",
+        "text": "NTNUI",
+        "img": "ntnui2.png"
+    },
+    "ski": {
+        "parent": "sport",
+        "text": "Ski",
+        "img": "ski.png"
+    },
+    "skoyter": {
+        "parent": "sport",
+        "text": "Skøyter",
+        "img": "skoyter.png"
+    },
+    "diskgolf": {
+        "parent": "sport",
+        "text": "Diskgolf",
+        "img": "diskgolf.png"
+    },
+    "pirbadet_bad": {
+        "parent": "sport",
+        "text": "Pirbadet badetid",
+        "img": "pirbadet_bad.png"
+    },
+    "klatring": {
+        "parent": "sport",
+        "text": "Klatrehaller",
+        "img": "klatring.png"
+    },
+    "trening": {
+        "parent": "sport",
+        "text": "SiT Trening",
+        "img": "trening.png"
+    },
+    "superhero_pizza": {
+        "parent": "spisesteder",
+        "text": "Superhero Pizza",
+        "img": "superhero_pizza.png"
+    },
+    "samf_ol": {
+        "parent": "spisesteder",
+        "text": "Samfundet øl",
+        "img": "samf_ol.png"
+    },
+    "edoramen": {
+        "parent": "spisesteder",
+        "text": "Edoramen",
+        "img": "edoramen.png"
+    },
+    "le_bistro": {
+        "parent": "spisesteder",
+        "text": "Le Bistro",
+        "img": "le_bistro.png"
+    },
+    "sushi_bar": {
+        "parent": "spisesteder",
+        "text": "Sushi bar",
+        "img": "sushi_bar.png"
+    },
+    "workwork": {
+        "parent": "spisesteder",
+        "text": "Work Work",
+        "img": "workwork.png"
     }
+    
+    
+    
+
 }
