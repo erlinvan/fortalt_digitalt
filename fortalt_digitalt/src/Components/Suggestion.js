@@ -35,12 +35,14 @@ function Suggestion({ data }) {
       {data.text &&
         (data.img ? (
           <Grid item xs={12} sm={5}>
+            <Typography variant="h5"> {data.title}</Typography>
             {data.text.split("\n").map((e) => (
               <Typography variant="body1">{e}</Typography>
             ))}
           </Grid>
         ) : (
           <Grid item xs={12}>
+            <Typography variant="h4"> {data.title}</Typography>
             {data.text.split("\n").map((e) => (
               <Typography variant="body1">{t(e)}</Typography>
             ))}
