@@ -1,6 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
+// Common
+import {getTimeType, getSeason } from "../Common/time";
+
 // Components
 import Paper from "@material-ui/core/Paper";
 import { Grid, Typography } from "@material-ui/core";
@@ -48,6 +51,14 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
       }
 
       if (requirements.when && (requirements.when === "now" ? true : false) != when) {
+        return "";
+      }
+
+      if (requirements.time && requirements.time != getTimeType()) {
+        return "";
+      }
+
+      if (requirements.season && requirements.season != getSeason()) {
         return "";
       }
 

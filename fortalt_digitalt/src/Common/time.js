@@ -31,12 +31,12 @@ export function getSeason() {
     return "Vinter";
   }
     if (month >= 2 && month <=4 ) {
-      return "Vår";
+      return "Var";
   }
     if (month >= 5 && month <= 7 ) {
       return "Sommer";
   }
     if (month >=8 && month <= 10) {
-      return "Høst";
+      return "Host";
   }
 }
