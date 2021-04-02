@@ -59,7 +59,7 @@ const ChoiceOne = ({ data, setChoice, weather, when }) => {
           return "";
         }
 
-        if (requirements.season && !requirements.season.split(",").includes(getSeason()))
+        if (requirements.season && !requirements.season.split(",").includes(getSeason())) {
           return "";
         }
       }
