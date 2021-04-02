@@ -41,7 +41,6 @@
             "Burmaklippen": {
                 "id": "burmaklippen",
                 "requires": {
-                    "when": "",
                     "weather": "good"
                 }
             }
@@ -54,7 +53,8 @@
             "Theisendammen": {
                 "id": "ilabekken",
                 "requires": {
-                    "when": ""
+                    "when": "",
+                    "weather": "good"
                 }
             },
             "Elgsethytta": {
@@ -72,14 +72,14 @@
             "Ladestien": {
                 "id": "ladestien",
                 "requires": {
-                    "when": "",
-                    "season":"Host/Sommer/Var"
+                    "season":"Host,Sommer,Var",
+                    "time": "Morgen,Ettermiddag"
                 }
             },
             "Bymarka": {
                 "id": "bymarka",
                 "requires": {
-                    "when": ""
+                    "time": "Morgen,Ettermiddag"
                 }
             }
         }
@@ -92,10 +92,20 @@
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Byens billigste øl!": "spisesteder_ol",
+            "Byens billigste øl!": {
+                "id": "spisesteder_ol",
+                "requires": {
+                    "time": "Ettermiddag,Kveld"
+                }
+            },
             "Fancy, men rimelig mat": "spisesteder_fancy",
-            "Gøyale barkonsepter": "spisesteder_bar",
-            "Middagsfavoritter": "spisesteder_middag"
+            "Gøyale barkonsepter": {
+                "id": "spisesteder_bar",
+                "requires": {
+                    "time": "Ettermiddag,Kveld"
+                }
+            },
+            "Studentfavoritter": "spisesteder_middag"
         }
     },
 
@@ -103,7 +113,7 @@
         "parent": "spisesteder",
         "question": "Hvilket sted vil du lese mer om?",
         "options": {
-            "Superhero Pizza": {
+            "Superhero Pizza":{
                 "id": "superhero_pizza",
                 "requires": {
                     "when": "now"
@@ -215,7 +225,12 @@
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Museum": "kultur_museum",
+            "Museum": {
+                "id": "kultur_museum",
+                "requires": {
+                    "time": "Morgen,Ettermiddag"
+                }
+            },
             "Noe utenom det vanlige": "kultur_uvanlig"
         }
     },
@@ -227,19 +242,25 @@
             "Cinemateket": {
                 "id": "cinemateket",
                 "requires": {
-                    "when": "now"
+                    "time": "Ettermiddag,Kveld"
                 }
             },
             "Salamandernatten": {
                 "id": "salamandernatten",
                 "requires": {
-                    "when": "now"
+                    "time": "Morgen"
                 }
             },
             "Loftet på Moholt": {
                 "id": "loftet",
                 "requires": {
                     "when": "now"
+                }
+            },
+            "UKA": {
+                "id": "uka",
+                "requires": {
+                    "when": "future"
                 }
             }
         }
@@ -277,43 +298,46 @@
             "NTNU Idrett": {
                 "id": "ntnui",
                 "requires": {
-                    "when": ""
+                    "when": "future"
                 }
             },
             "Ski": {
                 "id": "ski",
                 "requires": {
-                    "when": ""
+                    "season": "Vinter",
+                    "time": "Morgen,Ettermiddag",
+                    "weather": "good"
                 }
             },
             "Skøyter": {
                 "id": "skoyter",
                 "requires": {
-                    "when": ""
+                    "season": "Vinter"
                 }
             },
             "Diskgolf": {
                 "id": "diskgolf",
                 "requires": {
-                    "when": "now"
+                    "season": "Var,Sommer,Host",
+                    "weather": "good"
                 }
             },
             "Pirbadet": {
                 "id": "pirbadet_bad",
                 "requires": {
-                    "when": "now"
+                    "time": "Morgen,Ettermiddag,Kveld"
                 }
             },
             "Klatrehaller": {
                 "id": "klatring",
                 "requires": {
-                    "when": "now"
+                    "time": "Morgen,Ettermiddag,Kveld"
                 }
             },
             "SiT Trening": {
                 "id": "trening",
                 "requires": {
-                    "when": "now"
+                    "time": "Morgen,Ettermiddag,Kveld"
                 }
             }
 
@@ -359,7 +383,7 @@
         "parent": "turValg_lang",
         "title": "Elgsethytta",
         "text": "Lengde: 3 km\nVarighet: 1 time og 30 minutter (kun en vei fra Skistua)\nSesong: Hele året, til fots og på ski\nTips: Ta med deg penger til hytta dersom du ønsker en bensin til turen\nTilgjengelighet: Mulighet for barnevogner\n*\nI Bymarka i Trondheim finner man Elgsethytta som er åpen for allmennheten og er ei turisthytte med serveringssted. Den befinner seg nærmere bestemt i Bynesmarka mellom Bosbergheia og Elsetheia. Den ble åpnet i 1958 og dagens eierskap og ansvar ligger nå på Anne Valseth som styrer driften av hytta.\n*\nElgsethytta har åpent alle dager unntatt mandager. Det serveres rømmegrøt og spekemat på tirsdag, onsdag og torsdag. Hytta er tilgjengelig for familier med barnevogn siden det går en grusvei helt inn. På vinteren går det fantastiske skiløyper inn til hytta hvor man kan ta seg en pust i bakken i varmestuen. I tillegg er det mulighet for å utforske området i nærheten, blant annet Storheia som er Bymarkas høyeste utsiktspunkt. ",
-        "img": "elgsethytta.png"
+        "img": "elgsethytta2.jpg"
     },
     "ladestien": {
         "parent": "turValg_lang",
@@ -395,19 +419,25 @@
         "parent": "kultur_uvanlig",
         "title": "Salamandernatten",
         "text": "Salamandernatten er en kunstutstilling lokalisert under Sparebank1 i Søndre gate og er gratis å besøke i bankens åpningstider (man- fre: 09:00- 15:00). Utstillingen, laget i 1989 i Brasil, består av 72 skulpturer, alle tre meter høye, og har nå fått sin endelige plass i Trondheim. Utstillingen ble original laget med et utgangspunkt i et engasjement for bevaring av regnskogen, og førte også til stor internasjonal oppmerksomhet rundt den brutale avskogingen av Amazonas. \nHer er det best å ikke vite hva du går til, men for mer info: https://www.visittrondheim.no/salamandernatten-no",
-        "img": "salamandernatten.png"
+        "img": "salamandernatten2.png"
     },
     "cinemateket": {
         "parent": "kultur_uvanlig",
         "title": "Cinemateket",
         "text": "I Kjøpmannsgata 48 kan du se film litt utenom det vanlige. De viser både gamle klassikere og nye produksjoner du (sannsynligvis) ikke har fått med deg. Her hostes det jevnlig filmquiz og stadig nye filmer blir introdusert. Og med servering fra Bar Ingmar kan man nyte et godt glass til filmen, noe Nova og Prinsen ikke kan skilte med.\nÅpningstider\nMandag-tirsdag, lørdag: Stengt\nOnsdag-Fredag: 17 – 23\nSøndag: 15 – 23\nBillettpriser\nEnkeltbillett: 100 kr\nMedlem: 70 kr",
-        "img": "cinemateket.png"
+        "img": "cinemateket2.jpg"
     },
     "loftet": {
         "parent": "kultur_uvanlig",
         "title": "Loftet på Moholt",
         "text": "Midt i Moholt studentby, over Moholts bibliotek og café ligger Loftet, en sosial møteplass for alle Trondheims studenter. På dagtid er loftet et sted man kan dra for en prat med bomiljøkoordinator, spille bordtennis eller lese på Loftets leseplasser. På ettermiddag og kveldstid derimot tar studentene over Loftet og det arrangeres blant annet brettspillkveld, quiz, konsert ol.\nÅpningstider:\nMandag- torsdag: 10:00- 22:00\nFredag: 10:00- 23:00\nLørdag: 15:00- 23:00\nSøndag: 12:00- 22:00\nFor informasjon om hva som skjer på loftet kan du sjekke ut loftets instagram: https://www.instagram.com/sitloftet/",
         "img": "loftet.png"
+    },
+    "uka": {
+        "parent": "kultur_uvanlig",
+        "title": "UKA",
+        "text": "UKA er en kulturfestival i Trondheim som er Norges største og eldste studentuke. Festivalen er tilknyttet Studentersamfundet i Trondheim og ble etablert i 1917. Den blir arrangert annenhver høst og inkluderer både UKErevyen og stort konsertprogram som tidligere har inkludert større artister som Calvin Harris, Snoop Dogg, Roby, Travis, The Prodigy og mange andre.\nUKA arrangeres basert på frivillig arbeid og innsats av tusenvis av studenter som man ikke kunne vært foruten. Til UKA 2021 kommer blant annet Astrid S, Tones and I + Veronica Maggio hvor førstnevnte spiller i Storsalen og sistnevnte i Dødens dal. I år blir festivalen arrangert fra 7.-31.oktober og blir (forhåpentligvis) en stor begivenhet. Dette blir moro!",
+        "img": "uka.png"
     },
     "ntnui": {
         "parent": "sport",
@@ -467,19 +497,19 @@
         "parent": "spisesteder_fancy",
         "title": "Edoramen",
         "text": "Hvis Credo blir for meget for studentbudsjettet, er Edoramen en lavprissatsing av samme kjøkken. Her kan du få en solid skål gourmetnudler til under 200 kr. Dette er hverdagsluksus man kan unde seg. Adressen er Ladeveien 9C.",
-        "img": "edoramen.png"
+        "img": "edoramen2.jpeg"
     },
     "le_bistro": {
         "parent": "spisesteder_fancy",
         "title": "Le Bistro",
         "text": "Le Bistro har nylig blitt kåret til Norges beste bistro av Dagens Næringsliv, og det er av god grunn. For relativt gode priser (til fransk mat å være) kan man få østers, froskelår og klassisk løksuppe. Hvis man først vil skjemme seg bort med studentvennlig gourmet er Le Bistro noe av det beste Trondheim har å by på. Adressen er Munkegata 25.",
-        "img": "le_bistro.png"
+        "img": "le_bistro2.png"
     },
     "sushi_bar": {
         "parent": "spisesteder_fancy",
         "title": "Sushi Bar",
         "text": "Det er bred enighet blant studentmassen at Sushi Bar treffer den perfekte balansen mellom kvalitet og prisnivå (biten med flambert laks MÅ prøves). De har restauranter på torvet (Kongens gate 14b), Solsiden (Innherredsveien 14) og Ravnkloa (Munkegata 39), alle med studentrabatter (-20% rabatt på alle stedene).",
-        "img": "sushi_bar.png"
+        "img": "sushi_bar2.jpg"
     },
     "skydstasjon": {
         "parent": "spisesteder_fancy",
@@ -491,19 +521,19 @@
         "parent": "spisesteder_bar",
         "title": "Work Work",
         "text": "Dette er en videospill-tematisk bar. Her kan man spille i vei samtidig som man tar seg en tur i baren. Hvis man vil gjøre andre ting her kan man også prøve seg litt på shuffleboard eller pinball. Adressen er Munkegata 58.",
-        "img": "workwork.png"
+        "img": "workwork2.jpeg"
     },
     "camping": {
         "parent": "spisesteder_bar",
         "title": "Trondheim Camping",
         "text": "Dette er en fin plass å ha det gøy på. Her finnes både minigolf (110 kr) og bar (20 års grense etter kl.19.00). Du finner dette artige stedet i Folkets hus, på Cicignons plass. Husk at dette er en bar, så spis godt før du kommer hit. Det serveres snacks i baren, men ikke middager.",
-        "img": "camping2.png"
+        "img": "camping2.jpeg"
     },
     "olearys": {
         "parent": "spisesteder_bar",
         "title": "O'Learys",
         "text": "Perfekt om man vil spise en solid middag og gjøre noe gøy med venner på ett og samme sted. Spill shuffleboard eller biljard før/etter/under middag. Mat og fornøyeligheter på samme sted. Blir det bedre? Ligger i Olav Tryggvasons gate 40.",
-        "img": "olearys.png"
+        "img": "olearys3.jpg"
     },
     "egon": {
         "parent": "spisesteder_middag",
@@ -527,12 +557,12 @@
         "parent": "spisesteder_middag",
         "title": "La Border",
         "text": "La Border er en burrito-bar med mat inspirert av kulturmixen på grensen mellom Mexico og USA. De er flinke til å bruke lokale råvarer og sin kulturelle arv fra grenseområdet (Mexico-USA). Restauranten ligger i Thomas Angells gate 14 og det er greit å være forberedt på noenlunde stive priser (for studenter).",
-        "img": "la_border.png"
+        "img": "la_border2.jpeg"
     },
     "cowsea": {
         "parent": "spisesteder_middag",
         "title": "Cowsea",
         "text": "Cowsea ligger i Ferjemannsveien 12 og har studentrabatt (-15% rabatt). Her har de alt fra sushi til burgere og biff, slik at alle i gjengen finner noe de har lyst på.",
-        "img": "cowsea.png"
+        "img": "cowsea3.png"
     }
 }
