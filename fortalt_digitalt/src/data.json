@@ -12,47 +12,557 @@
         "parent": "choiceOne",
         "question": "Hvilken type tur vil du gå?",
         "options": {
-            "Kort": {
-                "id": "kortTurForslag",
-                "requires": {
-                    "when": "now"
-                }
-            },
-            "Lang": ""
+            "Kort": "turValg_kort",
+            "Lang": "turValg_lang"
         }
     },
+    "turValg_kort": {
+        "parent": "turValg",
+        "question": "Hvilken tur vil du lese mer om?",
+        "options": {
+            "Øya - Bakklandet": {
+                "id": "bakklandet",
+                "requires": {
+                    "when": ""
+                }
+            },
+            "Skansen - Pirbadet": {
+                "id": "pirbadet_tur",
+                "requires": {
+                    "when": ""
+                }
+            },
+            "Forsvarsrunden": {
+                "id": "forsvarsrunden",
+                "requires": {
+                    "when": ""
+                }
+            },
+            "Burmaklippen": {
+                "id": "burmaklippen",
+                "requires": {
+                    "weather": "good"
+                }
+            }
+        }
+    },
+    "turValg_lang": {
+        "parent": "turValg",
+        "question": "Hvilken tur vil du lese mer om?",
+        "options": {
+            "Theisendammen": {
+                "id": "ilabekken",
+                "requires": {
+                    "when": "",
+                    "weather": "good"
+                }
+            },
+            "Elgsethytta": {
+                "id": "elgsethytta",
+                "requires": {
+                    "when": "future"
+                }
+            },
+            "Nedre Leirfoss": {
+                "id": "sluppenbrua",
+                "requires": {
+                    "when": ""
+                }
+            },
+            "Ladestien": {
+                "id": "ladestien",
+                "requires": {
+                    "season":"Host,Sommer,Var",
+                    "time": "Morgen,Ettermiddag"
+                }
+            },
+            "Bymarka": {
+                "id": "bymarka",
+                "requires": {
+                    "time": "Morgen,Ettermiddag"
+                }
+            }
+        }
+    },
+
+
+
+
     "spisesteder": {
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Byens billigste øl!": "",
-            "Fancy, men rimelig mat": "",
-            "Bar med aktiviteter": ""
+            "Byens billigste øl!": {
+                "id": "spisesteder_ol",
+                "requires": {
+                    "time": "Ettermiddag,Kveld"
+                }
+            },
+            "Fancy, men rimelig mat": "spisesteder_fancy",
+            "Gøyale barkonsepter": {
+                "id": "spisesteder_bar",
+                "requires": {
+                    "time": "Ettermiddag,Kveld"
+                }
+            },
+            "Studentfavoritter": "spisesteder_middag"
         }
     },
+
+    "spisesteder_ol": {
+        "parent": "spisesteder",
+        "question": "Hvilket sted vil du lese mer om?",
+        "options": {
+            "Superhero Pizza":{
+                "id": "superhero_pizza",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Samfundet": {
+                "id": "samf_ol",
+                "requires": {
+                    "when": "now"
+                }
+            }
+        }
+    },
+
+    "spisesteder_fancy": {
+        "parent": "spisesteder",
+        "question": "Hvilket sted vil du lese mer om?",
+        "options": {
+            "Edoramen": {
+                "id": "edoramen",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Le Bistro": {
+                "id": "le_bistro",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Sushi Bar": {
+                "id": "sushi_bar",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Baklandet Skydsstation": {
+                "id": "skydstasjon",
+                "requires": {
+                    "when": "now"
+                }
+            }
+        }
+    },
+
+    "spisesteder_bar": {
+        "parent": "spisesteder",
+        "question": "Hvilket sted vil du lese mer om?",
+        "options": {
+            "Work Work": {
+                "id": "workwork",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Trondheim Camping": {
+                "id": "camping",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "O'Learys": {
+                "id": "olearys",
+                "requires": {
+                    "when": "now"
+                }
+            }
+        }
+    },
+
+    "spisesteder_middag": {
+        "parent": "spisesteder",
+        "question": "Hvilket sted vil du lese mer om?",
+        "options": {
+            "La Border": {
+                "id": "la_border",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Hector": {
+                "id": "hector",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Cowsea": {
+                "id": "cowsea",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Graffi": {
+                "id": "graffi",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Egon Tyholttårnet": {
+                "id": "egon",
+                "requires": {
+                    "when": "now"
+                }
+            }
+        }
+    },
+
     "kultur": {
         "parent": "choiceOne",
         "question": "Hva er du ute etter?",
         "options": {
-            "Museum": "",
-            "Historiske steder": "",
-            "Noe utenom det vanlige": ""
+            "Museum": {
+                "id": "kultur_museum",
+                "requires": {
+                    "time": "Morgen,Ettermiddag"
+                }
+            },
+            "Noe utenom det vanlige": "kultur_uvanlig"
         }
     },
+
+    "kultur_uvanlig": {
+        "parent": "kultur",
+        "question": "Hvilket museum vil du lære mer om?",
+        "options": {
+            "Cinemateket": {
+                "id": "cinemateket",
+                "requires": {
+                    "time": "Ettermiddag,Kveld"
+                }
+            },
+            "Salamandernatten": {
+                "id": "salamandernatten",
+                "requires": {
+                    "time": "Morgen"
+                }
+            },
+            "Loftet på Moholt": {
+                "id": "loftet",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "UKA": {
+                "id": "uka",
+                "requires": {
+                    "when": "future"
+                }
+            }
+        }
+    },
+
+    "kultur_museum": {
+        "parent": "kultur",
+        "question": "Hva vil du lære mer om?",
+        "options": {
+            "Rockheim": {
+                "id": "rockheim",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Ringve Musikkmuseum": {
+                "id": "ringve",
+                "requires": {
+                    "when": "now"
+                }
+            },
+            "Vitenskapsmuseet": {
+                "id": "vitenskapsmuseet",
+                "requires": {
+                    "when": "now"
+                }
+            }
+        }
+    },
+
     "sport": {
         "parent": "choiceOne",
         "question": "Velg aktivitet",
         "options": {
-            "NTNU Idrett": "",
-            "Ski": "",
-            "Diskgolf": "",
-            "Golf": "",
-            "Pirbadet": ""
+            "NTNU Idrett": {
+                "id": "ntnui",
+                "requires": {
+                    "when": "future"
+                }
+            },
+            "Ski": {
+                "id": "ski",
+                "requires": {
+                    "season": "Vinter",
+                    "time": "Morgen,Ettermiddag",
+                    "weather": "good"
+                }
+            },
+            "Skøyter": {
+                "id": "skoyter",
+                "requires": {
+                    "season": "Vinter"
+                }
+            },
+            "Diskgolf": {
+                "id": "diskgolf",
+                "requires": {
+                    "season": "Var,Sommer,Host",
+                    "weather": "good"
+                }
+            },
+            "Pirbadet": {
+                "id": "pirbadet_bad",
+                "requires": {
+                    "time": "Morgen,Ettermiddag,Kveld"
+                }
+            },
+            "Klatrehaller": {
+                "id": "klatring",
+                "requires": {
+                    "time": "Morgen,Ettermiddag,Kveld"
+                }
+            },
+            "SiT Trening": {
+                "id": "trening",
+                "requires": {
+                    "time": "Morgen,Ettermiddag,Kveld"
+                }
+            }
+
         }
     },
-    "kortTurForslag": {
-        "parent": "turValg",
-        "text": "Kort tur er bra for kroppen. Vi anbefaler disse turene",
-        "img": "kuhaugen.jpg"
+    "bakklandet": {
+        "parent": "turValg_kort",
+        "title": "Øya - Bakklandet",
+        "text": "Dersom du er på let etter en kort spasertur i Trondheim vil denne turen være den rette for deg.\nLengde: 2 km\nVarighet: 30 min - 1 time (kun en vei)\nSesong: Hele året\nTips: Ta med deg en piknikkurv, stopp på Marinen og ta en lunsj!\nTilgjengelighet: Egnet for rullestol og barnevogn\n*\nGå en fantastisk tur midt i Trondheim by som starter på Øya og strekker seg til Bakklandet. Man går over en bro på Øya som går til Kalvskinnet og videre til Marinen hvor man kan ta en lunsj. I tillegg går man rett forbi Nidarosdomen, som er et vakkert syn uansett sesong. ",
+        "img": "bakklandet.png"
+    },
+    "pirbadet_tur": {
+        "parent": "turValg_kort",
+        "title": "Skansen - Pirbadet",
+        "text": "Dersom du er på let etter en meget kort, nydelig gåtur i Trondheim vil denne turen være den rette for deg.\nLengde: 2 km\nVarighet: 30 min - 1 time (kun en vei)\nSesong: Hele året\nTips: Ta med deg badetøyet på sommeren og ta deg et bad!\nTilgjengelighet: Egnet for rullestol og barnevogn\n*\nTuren starter ved Skansen som er et område som er et tidligere befestningsanlegg ved Trondheimsfjorden. Skansenbrua ligger i startområdet og er ei klaffebru som markerer seg som en flott konstruksjon som lag Dovrebanen passere. På turen går man forbi flere parker med gressareal som passer ypperlig til lunsj. Turen ligger som sagt ved fjorden og det kan være aktuelt å ta med allværsjakke, spesielt med tanke på at man er i Trøndelag. Turen kan også utføres som en joggetur da det er tilrettelagt for både fotgjengere og syklister. Den avsluttes ved Pirbadet, hvor det anbefales å ta en dukkert innendørs dersom bading i fjorden ikke frister.",
+        "img": "pirbadet.png"
+    },
+    "forsvarsrunden": {
+        "parent": "turValg_kort",
+        "title": "Forsvarsrunden",
+        "text": "Dersom du er på let etter en medium kort og sentral tur i Trondheim vil forsvarsrunden være den rette for deg.\nLengde: 5,4 km\nVarighet: 1 time og 20 minutter (kun en vei)\nSesong: Hele året\nTips: Ta med deg en piknikkurv og nyt en god lunsj på veien!\nTilgjengelighet: Egnet for rullestol og barnevogn\n*\nTuren passer perfekt som en helgetur som går innom Småbergan, Kristiansten festning, Rosenborg, Skyåsparken og Kuhaugen. Hvis du er interessert i militærhistorie passer denne turen utmerket for deg. Turen er godt skiltet med grønne skilt som viser deg retningen du skal gå i. I tillegg vil du få en av byens beste utsikter, hvor man for eksempel får god utsikt til byen på Kuhaugen. \n*\nAv historie vil turen inkludere krigshistorie hvor blant annet Kristiansten festning har historikk tilbake fra 1600-tallet og fungerte som et forsvar for Trondheim. Man drar også innom leiren i Persaunet som tyskerne bygget som var et hovedkvarter for 13.ubåtflotilje og en forlegningsleir. Man drar også innom Kuhaugen hvor det under andre verdenskrig ble opprettet flere militære installasjoner av tyskerne. Til slutt vil man også gå i nærheten av hvor dagens Luftforsvarets krigsskole er etablert.",
+        "img": "forsvarsrunden.png"
+    },
+    "ilabekken": {
+        "parent": "turValg_lang",
+        "title": "Ilabekken/Theisendammen",
+        "text": "Dersom du er på leting etter en medium lang tur utenfor sentrum vil turen fra Ilabekken til Theisendammen være den rette for deg. \nLengde: 5,2 km\nVarighet: 1 time og 30 minutter (kun en vei)\nSesong: Hele året\nTips: Ta med deg badetøy på sommeren til et bad i Theisendammen!\nTilgjengelighet: Vær obs på glatt underlag i sti\n*\nTuren består av en nydelig sti opp langs Ilabekken med trapper i fossefall og fin skog underveis og starter nede ved Nedre Ila eller i Ilaparken. Den inkluderer litt stigning som leder til en fantastisk utsikt over Trondheim. Ved ankomst til Theisendammen kan man ta på seg badetøyet og ta seg en dukkert! I tillegg er det muligheter for å fortsette oppover inn i Bymarka eller ta seg en runde rundt Theisendammen som er et populær område. Det finnes også en golfbane rett i nærheten som man kan ta i bruk.",
+        "img": "ilabekken.png"
+    },
+    "sluppenbrua": {
+        "parent": "turValg_lang",
+        "title": "Sluppenbrua - Nedre Leirfoss",
+        "text": "Dersom du er på leting etter et fint oppholdssted i Trondheim vil Sluppen bru sin gapahuk passe ypperlig for deg!\nLengde: 3 km\nVarighet: 1 time og 30 minutter (kun en vei)\nSesong: Hele året, men vær obs på is og vårløsning\nTips: Ta med deg en matpakke til å nyte ved ankomst\nTilgjengelighet: Vær obs på glatt underlag i sti\n*\nDet legges opp til start fra Sluppenbrua, men den kan også ankommes fra andre steder. Fra Sluppenbrua følger man en sti som også kan sykles. Stien er en populær joggeløype som inkluderer både flater og noen små stigninger. På veien ut kan man gå over en hengebro ut på en øy i Nidelva. Man kan også ta med grillmat og engangsgrill og stoppe flere steder underveis. Vær obs på Nidelva da strømmen er sterk så hold god avstand.\n*\nVed ankomst til Nedre Leirfoss er det flere benker, lekestativ for barn og noen apparater man kan utføre ulike treningsøvelser i for voksne. I tillegg er det et åpent område som kan kjøres til dersom stien blir utfordrende. Det er ofte mye fugler som holder til så pass på maten din! Måkene er kjappe til å nappe med seg nisten din.",
+        "img": "sluppenbrua.png"
+    },
+    "burmaklippen": {
+        "parent": "turValg_kort",
+        "title": "Estenstadmarka og Burmaklippen",
+        "text": "På vei opp mot Estenstadmarka har du Burmaklippen som er en klippe over et 50 meter høyt stup. Turen er enkel å gå og tar ca. 30 minutter fra Bekken parkeringsplass, nært Dragvoll. Når du er fremme vil du ha fin utsikt mot Dragvoll og Byåsen. Vil du gå en litt lengre tur kan du fortsette opp mot Estenstadhytta, og gå videre inn i Estenstadmarka.",
+        "img": "burmaklippen.png"
+    },
+    "elgsethytta": {
+        "parent": "turValg_lang",
+        "title": "Elgsethytta",
+        "text": "Lengde: 3 km\nVarighet: 1 time og 30 minutter (kun en vei fra Skistua)\nSesong: Hele året, til fots og på ski\nTips: Ta med deg penger til hytta dersom du ønsker en bensin til turen\nTilgjengelighet: Mulighet for barnevogner\n*\nI Bymarka i Trondheim finner man Elgsethytta som er åpen for allmennheten og er ei turisthytte med serveringssted. Den befinner seg nærmere bestemt i Bynesmarka mellom Bosbergheia og Elsetheia. Den ble åpnet i 1958 og dagens eierskap og ansvar ligger nå på Anne Valseth som styrer driften av hytta.\n*\nElgsethytta har åpent alle dager unntatt mandager. Det serveres rømmegrøt og spekemat på tirsdag, onsdag og torsdag. Hytta er tilgjengelig for familier med barnevogn siden det går en grusvei helt inn. På vinteren går det fantastiske skiløyper inn til hytta hvor man kan ta seg en pust i bakken i varmestuen. I tillegg er det mulighet for å utforske området i nærheten, blant annet Storheia som er Bymarkas høyeste utsiktspunkt. ",
+        "img": "elgsethytta2.jpg"
+    },
+    "ladestien": {
+        "parent": "turValg_lang",
+        "title": "Ladestien",
+        "text": "Lengde: ca. 8 km\nVarighet: ca. 2 timer\nSesong: April- september\nTips: Langs ladestien er det flere flotte badesteder!\nLadestien er en av de mest populære turstiene i trondheim, og er en veldig lett og fin tur å gå. Turen strekker seg langs sjøen fra ladehammeren til Rotvoll, og med veien er det flere fine stoppesteder med benker og strender. I løpet av turen kan det også være verd å få med seg serveringsstedet på ladekaia, kafeen på sponhuset, samt skulpturen på ladehammeren og talerøret.",
+        "img": "ladestien.png"
+    },
+    "bymarka": {
+        "parent": "turValg_lang",
+        "title": "Bymarka",
+        "text": "I bymarka er det mange fine turmål, som både passer til en gå tur om sommeren eller en skitur om vinteren. Turene i bymarka kan gjøres både korte og lange alt etter hva du selv ønsker.  En smart måte og komme seg opp til bymarka er og bruke lian trikken, den går en gang i halvtimen på søndagen og tar deg fra prinsensgate og rett opp i bymarka. \n*\nEn av bymarkas kortere er turen til våttakammen, og tar rundt en time og gå avhengig av hvor du starter. De mest vanlige start stedene er driftsvegen i storsvingen i Vestoppfarten, fra Fagerlia/Schøningsdalen via Strandlinja og fra Baklidammen eller Gamle Bynesvei. Turen er fin og gå både i sommervær og vintervær. \n*\nHvis du ønsker deg en litt lengre tur er to populære turmål storheia som er den høyeste toppen i bymarka (ca.3 timer) og geitfjellet (ca.2 timer). Begge stedene gir en veldig fin utsikt over Trondheim. Hvis du tar turen til geitfjellet kan det også være verdt og få meg seg dreiers minne, som er en liten hytte gjemt inne i terrenget til fjellet. ",
+        "img": "bymarka.png"
+    },
+    "rockheim": {
+        "parent": "kultur_museum",
+        "title": "Rockheim",
+        "text": "Rockheim er det nasjonalet museet for norsk populærmusikk fra 1950-tallet og fram til idag, og er lokalisert på Brattørkaia i Trondheim. Blant museets hovedutstillinger har man blant annet tidstunnelsen hvor man beveger seg gjennom tiårene, og blir presentert for band og artister i lyset av deres tid.\nI tillegg til hovedutstillingene byr også museet på skiftende utstillinger som går i dybden i ulike temaer fra musikkhistorien og samtidskultur, egen restaurant og en scene hvor det av og til er konserter knyttet opp mot utstillingene.\nÅpningstider: \nTirsdag – fredag: 10.00 - 16.00\nLørdag – søndag: 11.00 - 17.00\nMandag: stengt \nBillettpriser:\nStudent/honør: 120 kr.\nVoksne: 150 kr.\nBarn (1-15): Gratis. ",
+        "img": "rockheim.png"
+    },
+    "ringve": {
+        "parent": "kultur_museum",
+        "title": "Ringve Musikkmuseum",
+        "text": "Hvis du interesserer deg for musikk og musikkhistorie er kanskje RIngve musikkmuseum noe for deg. Ringve musikkmuseum er det nasjonale museet for musikk og musikkinstrumenter, og ble åpnet allerede i 1952.  Museet har blant annet utstilling av instrumenter samt skiftende utstillinger som går i dybden på ulike musikkhistoriske temaer, samt nye musikalske strømninger. \nÅpningstider: \nSeptember - mai \nMandag: stengt\nTirsdag - søndag: kl. 11:00 - 16:00\nJuni - august\nAlle dager kl. 10:00 - 17:00\nBillettpris: \nVoksen: 150kr\nStudent/ honnør: 130kr\nBarn: 0-15: Gratis",
+        "img": "ringve.png"
+    },
+    "vitenskapsmuseet": {
+        "parent": "kultur_museum",
+        "title": "NTNU Vitenskapsmuseet",
+        "text": "NTNUs vitenskapelige museum er et av de seks universitetsmuseene vi har i Norge, og ligger i sentrum av Trondheim. Gjennom museets utstillinger formidles ulike naturhistoriske, kulturhistoriske og arkeologiske funn. \nÅpningstider:\nMandag: stengt\nTirsdag - fredag: kl. 10 - 16\nLørdag-søndag: kl. 11 - 16\nBillettpriser:\nVoksne: 100 kr\nBarn (6-16), studenter, honnør: 60 kr\nBarn under 6 år: Gratis\nFamiliegruppe barn og voksne, maks 5 pers.: 300 kr\nGrupper over 10 personer, ved samlet betaling: 90/50 kr",
+        "img": "vitenskapsmuseet.png"
+    },
+    "salamandernatten": {
+        "parent": "kultur_uvanlig",
+        "title": "Salamandernatten",
+        "text": "Salamandernatten er en kunstutstilling lokalisert under Sparebank1 i Søndre gate og er gratis å besøke i bankens åpningstider (man- fre: 09:00- 15:00). Utstillingen, laget i 1989 i Brasil, består av 72 skulpturer, alle tre meter høye, og har nå fått sin endelige plass i Trondheim. Utstillingen ble original laget med et utgangspunkt i et engasjement for bevaring av regnskogen, og førte også til stor internasjonal oppmerksomhet rundt den brutale avskogingen av Amazonas. \nHer er det best å ikke vite hva du går til, men for mer info: https://www.visittrondheim.no/salamandernatten-no",
+        "img": "salamandernatten2.png"
+    },
+    "cinemateket": {
+        "parent": "kultur_uvanlig",
+        "title": "Cinemateket",
+        "text": "I Kjøpmannsgata 48 kan du se film litt utenom det vanlige. De viser både gamle klassikere og nye produksjoner du (sannsynligvis) ikke har fått med deg. Her hostes det jevnlig filmquiz og stadig nye filmer blir introdusert. Og med servering fra Bar Ingmar kan man nyte et godt glass til filmen, noe Nova og Prinsen ikke kan skilte med.\nÅpningstider\nMandag-tirsdag, lørdag: Stengt\nOnsdag-Fredag: 17 – 23\nSøndag: 15 – 23\nBillettpriser\nEnkeltbillett: 100 kr\nMedlem: 70 kr",
+        "img": "cinemateket2.jpg"
+    },
+    "loftet": {
+        "parent": "kultur_uvanlig",
+        "title": "Loftet på Moholt",
+        "text": "Midt i Moholt studentby, over Moholts bibliotek og café ligger Loftet, en sosial møteplass for alle Trondheims studenter. På dagtid er loftet et sted man kan dra for en prat med bomiljøkoordinator, spille bordtennis eller lese på Loftets leseplasser. På ettermiddag og kveldstid derimot tar studentene over Loftet og det arrangeres blant annet brettspillkveld, quiz, konsert ol.\nÅpningstider:\nMandag- torsdag: 10:00- 22:00\nFredag: 10:00- 23:00\nLørdag: 15:00- 23:00\nSøndag: 12:00- 22:00\nFor informasjon om hva som skjer på loftet kan du sjekke ut loftets instagram: https://www.instagram.com/sitloftet/",
+        "img": "loftet.png"
+    },
+    "uka": {
+        "parent": "kultur_uvanlig",
+        "title": "UKA",
+        "text": "UKA er en kulturfestival i Trondheim som er Norges største og eldste studentuke. Festivalen er tilknyttet Studentersamfundet i Trondheim og ble etablert i 1917. Den blir arrangert annenhver høst og inkluderer både UKErevyen og stort konsertprogram som tidligere har inkludert større artister som Calvin Harris, Snoop Dogg, Roby, Travis, The Prodigy og mange andre.\nUKA arrangeres basert på frivillig arbeid og innsats av tusenvis av studenter som man ikke kunne vært foruten. Til UKA 2021 kommer blant annet Astrid S, Tones and I + Veronica Maggio hvor førstnevnte spiller i Storsalen og sistnevnte i Dødens dal. I år blir festivalen arrangert fra 7.-31.oktober og blir (forhåpentligvis) en stor begivenhet. Dette blir moro!",
+        "img": "uka.png"
+    },
+    "ntnui": {
+        "parent": "sport",
+        "title": "NTNUI",
+        "text": "NTNUI er NTNUs idrettsforening som tilbyr et bredt utvalg av idretter. Hvis du er interessert i fotball, fekting, cheerleading, sjakk, rumpeldunk (mm.) vil nok NTNUi ha noe for deg. For en oversikt over alle idrettsgruppene, besøk NTNUis side: https://ntnui.no/grupper/\nI tillegg til et bredt utvalg av idretter har også NTNUi en egen seksjon for dans. Her kan du delta i alt fra hiphop og ballet til AkroRock og poledance, og det finnes både klasser for nybegynnere og erfarne. For mer informasjon over de ulike dansene, besøk:  https://ntnuidans.no/",
+        "img": "ntnui2.png"
+    },
+    "ski": {
+        "parent": "sport",
+        "title": "Ski",
+        "text": "Nå om vinteren er det flere steder i Trondheim du kan ta deg en skitur i vinterværet. Du har blant annet flere skiløyper i Bymarka og Strindamarka hvor du kan gå på langrenn. Et tips for en enkel reise til Bymarka er å ta Lian-trikken, som går fra Prisens gate og tar deg rett opp i Bymarka. Er du mer interessert i slalåm eller snowboard har de både skianlegg i Vassfjellet, Gråkallen og i Åre.\nTips: Hvis du ikke eier egne ski trenger ikke dette å sette en stopper for skituren. På Moholt ligger nemlig boomerang styrt av NTNUi, hvor du kan leie skiutstyr gratis.",
+        "img": "ski.png"
+    },
+    "skoyter": {
+        "parent": "sport",
+        "title": "Skøyter",
+        "text": "Blant alle restaurantene på Solsiden er det om vinteren en skøytebane, hvor det er gratis å gå på skøyter. Har du ikke egne skøyter kan det leies på Heidis som er like ved. Hvis du har været med deg kan en tur opp til Theisendammen og være en fin plass og gå på skøyter. \nTips: I tillegg til at Heidis leier ut skøyter kan du også låne skøyter gratis av Boomerang, som ligger i Moholt studentby.",
+        "img": "skoyter.png"
+    },
+    "diskgolf": {
+        "parent": "sport",
+        "title": "Diskgolf",
+        "text": "Dette er en sport ganske lik golf bare man bruker en freesbie som kastes i stedet for golfkøller og golfballer. Det er gratis å spille på alle Trondheims baner, men husk at klubbens medlemmer møtes på de ulike anleggene hver onsdag og søndag for å spille seriespill så da er det opptatt. Hvis man er en seriøs «diskgolfer» så kan man melde seg inn i klubben for å bli med på et lag, og bli med i seriespill. I Trondheim er det fem baner man kan spille på:\n1.       Dragvoll diskgolf arena – her er det 18 hull og man rangerer denne banen til en medium vanskelighetsgrad. Denne banen ligger på NTNU Dragvoll.\n2.       Øya diskgolfpark – Her er det 9 hull og denne banen rangeres for nybegynnere. Men den er midlertidig stengt grunnet byggevirksomhet. Adressen er Klostergata 90.\n3.       Sluppen diskgolfpark – Denne banen har 8 hull (5 kurver). Vanskelighetsgraden er nybegynner. Adressen er Sluppen.\n4.       Risvollan diskgolfpark – Denne banen har 18 hull (9 kurver) og regnes for å være for nybegynnere i vanskelighetsgrad. Banen ligger ved Risvollan borettslag. \n5.     Othilienborg diskgolfbane – Denne banen har 9 hull og er for både nybegynnere og erfarne spillere. Banen regnes for å være en par 27 bane.",
+        "img": "diskgolf.png"
+    },
+    "pirbadet_bad": {
+        "parent": "sport",
+        "title": "Pirbadet",
+        "text": "Dette er Norges største innendørs badeanlegg og ligger på Brattøra i Trondheim. Studentprisene (Må være maks 34 år gammel) her er 170 kr for et dagspass, 435 kr for månedsabonnement, 4900 kr for årskort og det er lavere priser hvis man kjøper billetter i appen eller på hjemmesiden deres (Pirbadet.no) enn det er hvis man kjøper billett i resepsjon. Ordinære åpningstider (kan endre seg på helligdager) er:\n-          Mandag, onsdag og fredag: kl. 06.30-21.00\n-          Tirsdag og torsdag: kl. 12.00-21.00\n-          Lørdag og søndag: kl. 10.00-19.00\nHusk å hold 1 meters avstand under Corona-tiden vi er inne i.",
+        "img": "pirbadet_bad.png"
+    },
+    "klatring": {
+        "parent": "sport",
+        "title": "Klatrehaller",
+        "text": "Klatrehallen på Orklandbadet\nDenne klatrehallen er 18,5 m lang, 14 m bred og 15 m høy. Det gjør at stedet huser nesten 1000 m2 med klatrevegg, og er beregnet for tauklatring. Det er også den eneste klatreveggen i Trøndelag som tilfredsstiller kravene til internasjonal konkurranse. Stedet ligger i Tverradkomsten 61 i Orkanger så det er et stykke unna Trondheim, og beregn at det tar litt over en halvtime med bil dit.\n*\nUTE-hallen\nLigger sentrumsnært på Ladehammeren, adressen er Ormen Langes vei 15 og har åpent fra 07-23 hver dag, hele året. Det koster 110 kr for drop in og 100 kr for utleie av utstyr, men studentpris på dagtid før kl.15.00 er 60 kr (husk gyldig studentbevis og man må være under 30 år gammel), og studentpris for årskort er 385 kr i måneden. Her har de vegger som er 17 m, 16 m, 13 m, 11 m og 8 m høye, i tillegg til 130 forskjellige ruter. Det er gratis parkering utenfor.\n*\nGrip klatring (Trondheim klatresenter)\nDenne hallen ligger på adressen Sluppenvegen 11. Rundt 2000 m2 med vegg å bryne seg på. Åpent alle dager hele året fra 08-22 bortsett fra lørdager og søndager da det er åpent fra 10-20 (Lørdager) og 10-22 (Søndager). Medlemskap fra 435 kr i måneden, dagspass koster 110 kr, og på fredager har de studentpris på 90 kr.\n*\nTrondheim buldresenter\nLigger i Stiklestadveien 2 og har 1000 m2 å bryne seg på. Åpent fra 07-23 hele året med har gratis parkering og gratis kaffe (må betale for koppen). 100 kr for voksne, 80 kr for barn og 40 kr for leie av sko. Årskort koster 420 kr for studenter. ",
+        "img": "klatring.png"
+    },
+    "trening": {
+        "parent": "sport",
+        "title": "SiT Trening",
+        "text": "Sit tilbyr 5 treningssentre som man kan få tilgang til hvis man blir medlem:\n1.       Portalen treningssenter på Solsiden (Dyre Halses gate 1). Åpent fra kl. 06.30-22.00 mandag-fredag, kl. 09.00-20.00 på lørdager og kl. 09.00-22.00 på søndager.\n2.       Gløshaugen idrettsbygg (Chr. Frederiks gate 20) har åpningstider mandag til fredag fra kl. 06.30-23.00, lørdager fra kl. 09.00-20.00 og søndager fra kl. 09.00-22.00.\n3.       Dragvoll idrettssenter (Loholt allé 81). Åpningstider mandag til fredag er fra kl. 07.30-22.00, lørdager fra kl. 10.00-20.00 og søndager fra kl. 10.00-22.00.\n4.       Moholt treningssenter (Moholt allmenning 12) er åpent hver dag fra kl. 06.00-22.00. Her er det ikke garderobe som man kan dusje i, men det er omkledningsrom og toaletter der. For å få adgang må man ha et aktivt treningskort som kan kjøpes på nett.\n5.       DMMH treningsrom (Thrond Nergaards veg 7) er åpent hver dag fra kl. 06.30-22.30. Dette senteret er ubemannet, og man må ha et aktivt treningskort for å komme inn.",
+        "img": "trening.png"
+    },
+    "superhero_pizza": {
+        "parent": "spisesteder_ol",
+        "title": "Superhero Pizza",
+        "text": "Her ryktes det at ølen koster 29 kroner. Sjukt. Sikkert god mat der og. Adressen er Olav Tryggvasons Gate 33.",
+        "img": "superhero_pizza.png"
+    },
+    "samf_ol": {
+        "parent": "spisesteder_ol",
+        "title": "Samfundet",
+        "text": "Om man er Samfundet-medlem, koster det 49 kroner for en halvliter Dahls på hverdager og 64 kroner i helger. +20 kroner hvis man ikke er medlem (men hvem er ikke det med slike priser?). ",
+        "img": "samf_ol.png"
+    },
+    "edoramen": {
+        "parent": "spisesteder_fancy",
+        "title": "Edoramen",
+        "text": "Hvis Credo blir for meget for studentbudsjettet, er Edoramen en lavprissatsing av samme kjøkken. Her kan du få en solid skål gourmetnudler til under 200 kr. Dette er hverdagsluksus man kan unde seg. Adressen er Ladeveien 9C.",
+        "img": "edoramen2.jpeg"
+    },
+    "le_bistro": {
+        "parent": "spisesteder_fancy",
+        "title": "Le Bistro",
+        "text": "Le Bistro har nylig blitt kåret til Norges beste bistro av Dagens Næringsliv, og det er av god grunn. For relativt gode priser (til fransk mat å være) kan man få østers, froskelår og klassisk løksuppe. Hvis man først vil skjemme seg bort med studentvennlig gourmet er Le Bistro noe av det beste Trondheim har å by på. Adressen er Munkegata 25.",
+        "img": "le_bistro2.png"
+    },
+    "sushi_bar": {
+        "parent": "spisesteder_fancy",
+        "title": "Sushi Bar",
+        "text": "Det er bred enighet blant studentmassen at Sushi Bar treffer den perfekte balansen mellom kvalitet og prisnivå (biten med flambert laks MÅ prøves). De har restauranter på torvet (Kongens gate 14b), Solsiden (Innherredsveien 14) og Ravnkloa (Munkegata 39), alle med studentrabatter (-20% rabatt på alle stedene).",
+        "img": "sushi_bar2.jpg"
+    },
+    "skydstasjon": {
+        "parent": "spisesteder_fancy",
+        "title": "Bakklandet Skydsstation",
+        "text": "En kafé som kan være verdt å få med seg er Bakklandet Skydsstation som ligger i gågata på Bakklandet. Her kan du blant annet nyte hjemmelaget tradisjonell norsk mat eller en kopp kakao. Det som skiller denne kafén fra de fleste andre er dens lange historie, som strekker seg helt tilbake til 1700-tallet. Dette gir det lille bygget en egen sjarm over seg, med dens skjeve gulv og vegger. ",
+        "img": "skydstasjon.png"
+    },
+    "workwork": {
+        "parent": "spisesteder_bar",
+        "title": "Work Work",
+        "text": "Dette er en videospill-tematisk bar. Her kan man spille i vei samtidig som man tar seg en tur i baren. Hvis man vil gjøre andre ting her kan man også prøve seg litt på shuffleboard eller pinball. Adressen er Munkegata 58.",
+        "img": "workwork2.jpeg"
+    },
+    "camping": {
+        "parent": "spisesteder_bar",
+        "title": "Trondheim Camping",
+        "text": "Dette er en fin plass å ha det gøy på. Her finnes både minigolf (110 kr) og bar (20 års grense etter kl.19.00). Du finner dette artige stedet i Folkets hus, på Cicignons plass. Husk at dette er en bar, så spis godt før du kommer hit. Det serveres snacks i baren, men ikke middager.",
+        "img": "camping2.jpeg"
+    },
+    "olearys": {
+        "parent": "spisesteder_bar",
+        "title": "O'Learys",
+        "text": "Perfekt om man vil spise en solid middag og gjøre noe gøy med venner på ett og samme sted. Spill shuffleboard eller biljard før/etter/under middag. Mat og fornøyeligheter på samme sted. Blir det bedre? Ligger i Olav Tryggvasons gate 40.",
+        "img": "olearys3.jpg"
+    },
+    "egon": {
+        "parent": "spisesteder_middag",
+        "title": "Egon Tyholttårnet",
+        "text": "Hvis man har lyst på en god middag samtidig som man får den beste utsikten over Trondheim, så er dette stedet å dra til. Opplev middagen 70 meter over bakkenivå. Men det er greit å ha i mente, for studenter, at Egon ikke har de mest studentvennlige prisene i byen. Man trenger som regel ikke å reservere bord, da de aldri reserverer mer enn 50% av restauranten til enhver tid.",
+        "img": "egon2.png"
+    },
+    "hector": {
+        "parent": "spisesteder_middag",
+        "title": "Hector",
+        "text": "Her finner man meksikansk mat og «California style street-food». Man må være over 23 år etter kl.21.00 på fredager og lørdager. Muligheter til å booke et eget rom for å spise og drikke i, eller bare et vanlig bord i restauranten. Stedet har fått gode anmeldelser på maten, mens de er litt dårligere når det gjelder serveringen, så vær forberedt på å vente en stund på serveringen. Adressen er TMV-kaia 25.",
+        "img": "hector.png"
+    },
+    "graffi": {
+        "parent": "spisesteder_middag",
+        "title": "Graffi",
+        "text": "Det finnes to ulike Graffi grill-restauranter i Trondheim. Den originale Graffi grill ligger i Dyre Halses gate 18. Graffi Grill Midtbyen ligger i Olav Tryggvasons gate 24. Har man lyst på saftig kjøtt av ulike typer så er Graffi et bra sted å velge. Alt fra biff til spareribs og sandwich til burger er tilgjengelig i alle former og fasonger.",
+        "img": "graffi.png"
+    },
+    "la_border": {
+        "parent": "spisesteder_middag",
+        "title": "La Border",
+        "text": "La Border er en burrito-bar med mat inspirert av kulturmixen på grensen mellom Mexico og USA. De er flinke til å bruke lokale råvarer og sin kulturelle arv fra grenseområdet (Mexico-USA). Restauranten ligger i Thomas Angells gate 14 og det er greit å være forberedt på noenlunde stive priser (for studenter).",
+        "img": "la_border2.jpeg"
+    },
+    "cowsea": {
+        "parent": "spisesteder_middag",
+        "title": "Cowsea",
+        "text": "Cowsea ligger i Ferjemannsveien 12 og har studentrabatt (-15% rabatt). Her har de alt fra sushi til burgere og biff, slik at alle i gjengen finner noe de har lyst på.",
+        "img": "cowsea3.png"
     }
 }
