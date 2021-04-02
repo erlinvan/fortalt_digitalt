@@ -1,16 +1,17 @@
 export default function isDay() {
-    let time = new Date().getHours();
-  
-    if (7 < time && time < 18) {
-      return true;
-    }
-    else {
-      return false; 
-    }
+  let time = new Date().getHours();
+
+  if (7 < time && time < 18) {
+    return true;
+  }
+  else {
+    return false; 
+  }
 }
 
 export function getTimeType() {
   let time = new Date().getHours();
+  
   if (time > 7 && time < 12) {
     return "Morgen";
   }
@@ -26,8 +27,9 @@ export function getTimeType() {
 }
 
 export function getSeason() {
-    let month = new Date().getMonth();
-      if (month < 2 || month >= 11) {
+  let month = new Date().getMonth();
+
+  if (month < 2 || month >= 11) {
     return "Vinter";
   }
     if (month >= 2 && month <=4 ) {
