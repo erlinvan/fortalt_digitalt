@@ -237,7 +237,7 @@
 
     "kultur_uvanlig": {
         "parent": "kultur",
-        "question": "Hvilket museum vil du lære mer om?",
+        "question": "Hva vil du lære mer om?",
         "options": {
             "Cinemateket": {
                 "id": "cinemateket",
