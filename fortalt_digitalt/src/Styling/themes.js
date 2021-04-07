@@ -18,7 +18,7 @@ export const lightTheme = {
           backgroundPositionX: 'center',
           backgroundPositionY: '550px',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'auto 65%',
+          backgroundSize: 'auto 70%',
           backgroundAttachment: 'fixed',
           backgroundBlendMode: 'normal',
           backgroundImage: `url(${background})`
@@ -43,7 +43,7 @@ export const darkTheme = {
           backgroundPositionX: 'center',
           backgroundPositionY: '550px',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'auto 65%',
+          backgroundSize: 'auto 70%',
           backgroundAttachment: 'fixed',
           backgroundBlendMode: 'luminosity',
           backgroundImage: `url(${background})`
