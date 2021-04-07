@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
 function Suggestion({ data }) {
   const classes = useStyles();
   const { t, i18n } = useTranslation();
-  console.log(data.text.split("\n"));
 
   return (
     <Grid container alignItems="center" spacing={2}>
