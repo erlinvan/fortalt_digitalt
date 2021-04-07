@@ -121,9 +121,9 @@ function TopBar({theme, setTheme}) {
                 <Tooltip title={t('ThemeTooltip')}>
                     <IconButton edge="start" onClick={switchTheme} className={classes.button} color="inherit">
                         {theme === lightTheme ? (
-                            <Brightness2Icon />
-                        ) : ( 
                             <Brightness7Icon />
+                        ) : ( 
+                            <Brightness2Icon />
                         )}
                     </IconButton>
                 </Tooltip>

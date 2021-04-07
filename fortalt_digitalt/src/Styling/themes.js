@@ -14,9 +14,6 @@ export const lightTheme = {
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        img: {
-          borderRadius: '16px'
-        },
         body: {
           backgroundPositionX: 'center',
           backgroundPositionY: '550px',
@@ -42,9 +39,6 @@ export const darkTheme = {
   overrides: {
     MuiCssBaseline: {
       '@global': {
-        img: {
-          borderRadius: '16px'
-        },
         body: {
           backgroundPositionX: 'center',
           backgroundPositionY: '550px',

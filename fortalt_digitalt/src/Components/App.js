@@ -1,10 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// Common
-import isDay from "../Common/time";
-//import getNearbyRestaurants from "../Common/maps";
-
 // Components
 import Grid from "@material-ui/core/Grid";
 import Box from '@material-ui/core/Box';
