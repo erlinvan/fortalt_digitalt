@@ -15,10 +15,10 @@ import BottomBar from "./BottomBar";
 import Typography from '@material-ui/core/Typography';
 
 // Styling
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { lightTheme, darkTheme } from "../Styling/themes";
 import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { lightTheme, darkTheme } from "../Styling/themes";
 
 const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
@@ -34,23 +34,30 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function getTimeTheme() {
-  if (isDay()) {
-    return createMuiTheme(lightTheme);
-  } else {
-    return createMuiTheme(darkTheme);
+function getTheme() {
+  const chosenTheme = localStorage.getItem('theme');
+
+  if (!chosenTheme) {
+    localStorage.setItem('theme', 'light');
+    return lightTheme;
   }
+
+  return (chosenTheme === 'light') ? lightTheme : darkTheme;
 }
 
 function App() {
-  const theme = getTimeTheme();
   const classes = useStyles();
   const { t, i18n } = useTranslation();
+  const [theme, setTheme] = React.useState(getTheme());
+  const muiTheme = createMuiTheme(theme);
 
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider theme={muiTheme}>
       <CssBaseline />
-      <TopBar />
+      <TopBar 
+        theme={theme}
+        setTheme={setTheme} 
+      />
       <div className={classes.toolbar} />
       <Box
         display="flex"
@@ -72,7 +79,7 @@ function App() {
         <DynamicIcons />
         <BottomBar />
       </Box>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

@@ -25,7 +25,7 @@ export async function getWeatherIcon() {
         });
 
         const data = await response.json();
-        weather_icon = data["properties"]["timeseries"][0]["data"]["next_12_hours"]["summary"]["symbol_code"]
+        weather_icon = data["properties"]["timeseries"][0]["data"]["next_6_hours"]["summary"]["symbol_code"]
     }
 
     return weather_icon;

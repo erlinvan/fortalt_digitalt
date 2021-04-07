@@ -15,11 +15,14 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from '@material-ui/icons/Home';
 import LanguageIcon from '@material-ui/icons/Language';
+import Brightness2Icon from '@material-ui/icons/Brightness2';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import { motion } from "framer-motion";
 import Tooltip from '@material-ui/core/Tooltip';
 
 // Styling
 import { makeStyles } from '@material-ui/core/styles';
+import { lightTheme, darkTheme } from "../Styling/themes";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -55,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function TopBar() {
+function TopBar({theme, setTheme}) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { t, i18n } = useTranslation();
@@ -66,6 +69,16 @@ function TopBar() {
     
     function handleClose(event) {
         setAnchorEl(null);
+    }
+
+    function refreshPage() {
+        window.location.reload();
+    }
+
+    function switchTheme() {
+        const newTheme = (theme == lightTheme) ? darkTheme : lightTheme;
+        localStorage.setItem('theme', (newTheme === darkTheme) ? 'dark' : 'light');
+        setTheme(newTheme);
     }
 
     function updateLang(event) {
@@ -79,20 +92,16 @@ function TopBar() {
         handleClose(event);
     }
 
-    function refreshPage() {
-        window.location.reload();
-    }
-
     return (
         <AppBar position="fixed">
             <Toolbar>
                 <Tooltip title={t('DragTooltip')}>
                     <motion.div drag
                         dragConstraints={{
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0,
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
                         }} 
                         dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
                         whileTap={{ scale: 0.8 }} 
@@ -109,6 +118,15 @@ function TopBar() {
                         </Typography>
                     </Hidden>
                 </Box>
+                <Tooltip title={t('ThemeTooltip')}>
+                    <IconButton edge="start" onClick={switchTheme} className={classes.button} color="inherit">
+                        {theme === lightTheme ? (
+                            <Brightness2Icon />
+                        ) : ( 
+                            <Brightness7Icon />
+                        )}
+                    </IconButton>
+                </Tooltip>
                 <Tooltip title={t('LangTooltip')}>
                     <IconButton edge="start" onClick={handleClick} className={classes.button} color="inherit" aria-controls="simple-menu" aria-haspopup="true">
                         <LanguageIcon />

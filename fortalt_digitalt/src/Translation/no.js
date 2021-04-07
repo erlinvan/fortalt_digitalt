@@ -5,6 +5,7 @@ const i18_no = {
 	"Welcome2": "Her kan du finne forslag til nye ting å gjøre",
 	"ChoiceToday": "I dag",
 	"ChoiceFuture": "I fremtiden",
+	"ThemeTooltip": "Bytt tema",
 	"LangTooltip": "Bytt språk",
 	"HomeTooltip": "Hjem",
 	"BackTooltip": "Angre",
